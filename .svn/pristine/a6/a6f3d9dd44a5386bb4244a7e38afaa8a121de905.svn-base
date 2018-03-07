@@ -1,0 +1,78 @@
+._huato_download_banner
+  width: 100%
+  min-width: 1200px
+  font-size: 0
+  >img
+    width: 100%
+._huato_download_center
+  display: block
+  >section
+    margin: 0 auto
+    ._huato_download_list_menu
+      width: 294px
+      display: inline-block
+      header
+        font-size: 0
+        width: 294px
+        height: 156px
+        >section
+          background: url('../../assets/image/product/layout/title_background.png')
+          width: 100%
+          height: 100%
+          background-size: 100%
+          >section
+            width: 100%
+            height: 100%
+            padding: 40px
+            >span
+              width: 76px 
+              height: 76px
+              display: inline-block
+              vertical-align: middle
+              color: #ffffff
+              font-size: 76px
+              text-align: center
+            >section
+              display: inline-block
+              width: 138px
+              height: 76px
+              padding: 6px 0
+              vertical-align: middle
+              >h1
+                font-size: 30px
+                font-weight: bold
+                font-family: Microsoft YaHei
+                margin: 0
+                padding: 0
+                line-height: 40px
+                height: 40px
+                color: #fff
+                text-align: center
+              >span
+                font-family: Arial
+                color: #ffffff
+                font-size: 18px
+                text-align: center
+                line-height: 24px
+                display: block
+      >section._huato_downloadMenu
+        >ul._huato_downloadNavBlock
+          >li._huato_menuItem
+            height: 60px
+            border: 1px solid #ddd
+            line-height: 60px
+            text-align: left
+            padding-left: 20px
+            font-size: 16px
+            color: #555
+            font-family: Microsoft YaHei
+            cursor: pointer
+            border-top: none
+            outline: none
+          >li._huato_menuItem.active
+            border: 1px solid #5badf2
+            background: #5badf2
+            color: #ffffff
+    ._huato_download_list_details
+      display: inline-block
+      width: 906px

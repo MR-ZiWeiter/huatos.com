@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'huato-constom-articles',
+  templateUrl: './constom-articles.component.html',
+  styleUrls: ['./constom-articles.component.sass']
+})
+export class ConstomArticlesComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

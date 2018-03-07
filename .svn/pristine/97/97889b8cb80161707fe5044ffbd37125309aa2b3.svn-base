@@ -1,0 +1,29 @@
+.login-form 
+  max-width: 300px
+  background: #ffffff
+  border: 1px solid #ddd
+  border-radius: 5px
+  padding: 15px
+.login-form-forgot 
+  float: right
+.login-form-button 
+  width: 100%
+.viewCenter
+  height: 100%
+  width: 100%
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+  background: cornsilk
+  overflow: hidden
+
+

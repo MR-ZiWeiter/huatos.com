@@ -1,0 +1,33 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+
+import { ProductCenterComponent } from './product-center.component';
+import { ProductMenuComponent } from './component/product-menu/product-menu.component';
+import { ProductListDetailsComponent } from './component/product-list-details/product-list-details.component';
+
+import { productRoute } from './product-center.routing';
+import { ListDataService } from './component/product-list-details/list-data.service';
+import { LayoutHotlineModule } from '../public-component/layout-hotline/layout-hotline.module.routing';
+@NgModule({
+    imports: [
+        CommonModule,
+        RouterModule.forChild(productRoute),
+        FormsModule,
+        NgZorroAntdModule,
+        LayoutHotlineModule
+    ],
+    exports: [
+        ProductCenterComponent
+    ],
+    declarations: [
+        ProductCenterComponent,
+        ProductMenuComponent,
+        ProductListDetailsComponent
+    ],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+
+export class ProductCenterModule {  }

@@ -1,0 +1,34 @@
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-ckeditor',
+  templateUrl: './ckeditor.component.html',
+  styleUrls: ['./ckeditor.component.sass']
+})
+export class CkeditorComponent implements OnInit {
+  // ckeditorContent = '';
+  @Output() changeCKEditorContent: EventEmitter<string> = new EventEmitter();
+  public ckeditorContent: string;
+  config = {
+    filebrowserBrowseUrl: '&&&&&',
+    filebrowserUploadUrl: '&&&',
+    uiColor: '#dddddd'
+  };
+  constructor() { }
+  ngOnInit() {
+  }
+  onChange(ev) {
+    console.log('事件回调了！');
+    this.changeCKEditorContent.emit(this.ckeditorContent);
+  }
+  onReady(ev) {
+    console.log('准备好了！');
+  }
+  onFocus(ev) {
+    console.log('获取焦点了！');
+  }
+  onBlur(ev) {
+    console.log('失去焦点了！');
+  }
+
+}

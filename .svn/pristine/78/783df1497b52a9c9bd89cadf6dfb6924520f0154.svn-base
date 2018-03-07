@@ -1,0 +1,14 @@
+import { Component, OnInit } from '@angular/core';
+@Component({
+  selector: 'app-welcon',
+  templateUrl: './welcon.component.html',
+  styleUrls: ['./welcon.component.sass']
+})
+export class WelconComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

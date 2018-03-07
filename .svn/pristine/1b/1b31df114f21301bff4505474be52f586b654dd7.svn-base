@@ -1,0 +1,34 @@
+<section class="_huato_productlist">
+  <section nz-row class="_huato_productcontent">
+    <section class="_huato_product_nav" nz-row>
+      <header class="_huato_contack" nz-col>
+        <h2>{{ContentJson.personnelType_Name}}</h2>
+      </header>
+      <nav nz-col>
+        <nz-breadcrumb [nzSeparator]="'>'" class="_huato_navs">
+        <nz-breadcrumb-item>
+            <a routerLink="/home">主页</a>
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+            <a href="/recruitment">人才招聘</a>
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+            <a href="/recruitment/details/{{ContentJson.personnel_ID}}">{{ ContentJson.personnelType_Name }}</a>
+        </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </nav>
+      </section>
+      <section class="_huato_proListItem">
+      <section class="_huato_infoIntroctions">
+        <header>
+        <h1>{{ ContentJson.personnel_Name }}</h1>
+        <p>
+          <span>{{ ContentJson.personnel_time }}</span>
+        </p>
+        </header>
+        <nz-content [innerHtml] = 'ContentJson.personnel_content | bypassSecurityTrustHtml'>
+        </nz-content>
+      </section>
+    </section>
+  </section>
+</section>

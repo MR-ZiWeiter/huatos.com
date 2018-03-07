@@ -1,0 +1,87 @@
+._huato_SerachBox
+	position: fixed
+	top: 0
+	width: 100%
+	height: 100%
+	z-index: 999
+	min-width: 800px
+	._huato_SerachHeader
+		background: #5BADF2
+		display: flex
+		justify-content: space-between
+		align-items: center
+		::ng-deep .ant-breadcrumb a, ::ng-deep .ant-breadcrumb span
+			color: #fff
+		::ng-deep input
+			height: 25px
+			float: left
+			border-radius: 25px
+			text-indent: .1em
+	._huato_SerachContent
+		._huato_SerachSider
+			width: 20px !important
+			background: #fff0 !important
+			flex:0 0 20px !important
+			align-items: center
+			justify-content: center
+			display: flex
+			cursor: pointer
+	._huato_SerachContent:hover
+		._huato_SerachSider
+			background: #b9b9b994 !important
+		._huato_SerachSider:hover
+			background: #565656 !important
+			color: #fff
+// 产品
+._huato_home_prodc
+	overflow: hidden
+	padding: 30px
+	display: flex
+	flex-wrap: wrap
+	// justify-content: space-between
+	._huato_pro_items
+		width: 278px
+		cursor: pointer
+		margin: 10px
+		::ng-deep .ant-card-body
+			padding: 0
+			.custom-image
+				height: 210px
+				width: 100%
+				text-align: center
+				overflow: hidden
+				background: #fff
+				display: flex
+				justify-content: center
+				align-items: center
+				img
+					height: 100%
+					display: inline-block
+			.custom-card
+				height: 95px
+				padding: 10px 10px 12px
+				h3
+					height: 30px
+					font-size: 16px
+					color: #333333
+					font-family: Microsoft YaHei
+					line-height: 30px
+					overflow: hidden
+					text-overflow: ellipsis
+					white-space: nowrap
+				p
+					line-height: 22px
+					color: #666666
+					font-family: Microsoft YaHei
+					display: -webkit-box
+					-webkit-box-orient: vertical
+					-webkit-line-clamp: 2
+					overflow: hidden
+	// ._huato_pro_items:nth-child(4n)
+	// 	margin-right: 0
+	._huato_pro_items:hover
+		transform: scale(1.05)
+._huato_SerachJump
+	display: block
+	margin: 30px
+	text-align: center

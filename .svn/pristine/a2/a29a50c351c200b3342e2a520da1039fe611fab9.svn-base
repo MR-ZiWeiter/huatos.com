@@ -1,0 +1,29 @@
+<header nz-row class="_huato_recruitment_banner">
+  <img src="../../assets/image/public/others/home_about/about_banner.jpg" alt="banner">
+</header>
+<section class="_huato_recruitment_center">
+  <section class="_huato_theme_width" nz-row>
+    <section class="_huato_recruitment_list_menu" nz-col [nzSpan]="6">
+      <header>
+        <section>
+          <section>
+            <span class="iconfont icon-rencai"></span>
+            <section>
+              <h1>人才招聘</h1>
+              <span>Recruitment</span>
+            </section>
+          </section>
+        </section>
+      </header>
+      <section>
+        <ul>
+          <li><span>售前售后技术支持</span></li>
+        </ul>
+      </section>
+      <huato-layout-hotline></huato-layout-hotline>
+    </section>
+    <section class="_huato_recruitment_list_details" nz-col [nzSpan]="18">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</section>

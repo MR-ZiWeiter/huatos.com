@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-list-cate',
+  templateUrl: './list-cate.component.html',
+  styleUrls: ['./list-cate.component.sass']
+})
+export class ListCateComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

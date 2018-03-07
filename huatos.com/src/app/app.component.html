@@ -1,0 +1,45 @@
+<nz-spin [nzSpinning]="_isSpinning">
+  <nz-layout>
+    <nz-header class="_huato_layout_header">
+      <header class="_huato_layout_logger">
+        <section class="_huato_theme_width _huato_clearBoth">
+          <section class="_huato_float-l">
+            <img src="../assets/image/public/icons/LOGO.png" alt="_huato_LOGO">
+          </section>
+          <section class="_huato_float-r _huato_hotline">
+            <img src="../assets/image/public/icons/header-right-Service Hotline.png" alt="Hotline">
+            <section class="_huato_float-r">
+              <span class="_huato_webSiteAddressColor">
+                <a href="http://www.huato.cn">English</a>
+                |
+                <a href="http://www.huatos.com">中文</a>
+              </span>
+            </section>
+          </section>
+        </section>
+      </header>
+      <footer class="_huato_layout_nav">
+        <nav class="_huato_theme_width">
+          <header>
+            <menu type="context" routerLink="/home">首页</menu>
+            <menu type="context" routerLink="/product-center">产品中心</menu>
+            <menu type="context" routerLink="/solution">解决方案</menu>
+            <menu type="context" routerLink="/download">资料下载</menu>
+            <menu type="context" routerLink="/recruitment">人才招聘</menu>
+            <menu type="context" routerLink="/about-HUATO">关于华图</menu>
+          </header>
+          <section class="_huato_serch">
+            <nz-input [nzType]="'search'" (nzFocus)="openSerach()" [nzPlaceHolder]="'请输入关键词'" [(ngModel)]="_value" (nzOnSearch)="onSearch($event)" style="width: 220px; height:23px;"></nz-input>
+          </section>
+        </nav>
+      </footer>
+    </nz-header>
+    <nz-content class="_huato_layout_content">
+      <router-outlet></router-outlet>
+      <router-outlet name="popup"></router-outlet>
+    </nz-content>
+    <nz-footer class="_huato_layout_footer">
+      <huato-layout-footer></huato-layout-footer>
+    </nz-footer>
+  </nz-layout>
+</nz-spin>

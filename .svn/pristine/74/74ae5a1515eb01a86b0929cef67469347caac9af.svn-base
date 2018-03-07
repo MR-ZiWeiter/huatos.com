@@ -1,0 +1,43 @@
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UploadEvent, UploadFile } from 'ngx-file-drop';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Rx';
+import { other } from './../../../config/config';
+
+@Component({
+  selector: 'app-ngx-file-drop',
+  templateUrl: './ngx-file-drop.component.html',
+  styleUrls: ['./ngx-file-drop.component.sass']
+})
+export class NgxFileDropComponent implements OnInit {
+  @Output() uploadFileUrl: EventEmitter<string> = new EventEmitter();
+  public files: UploadFile[] = [];
+  private uploadUrl: string = other.upload;
+  private fromData = new FormData();
+  private newFileName = 'file-' + (new Date()).getTime();
+  public dropped(event: UploadEvent) {
+    this.files = event.files;
+    for (const file of event.files) {
+      file.fileEntry.file(info => {
+        this.fromData.append('file', info, this.newFileName + '-' + info.name);
+        this.httpClient.post(this.uploadUrl, this.fromData)
+          .subscribe((response) => {
+            console.log('上传成功！' + response);
+            this.uploadFileUrl.emit(JSON.stringify(response));
+          }, (err) => {
+            this.uploadFileUrl.emit(err);
+          });
+      });
+    }
+  }
+  constructor(private httpClient: HttpClient) { }
+  public fileOver(event) {
+    console.log(event);
+  }
+  public fileLeave(event) {
+    console.log(event);
+  }
+  ngOnInit() {
+  }
+
+}

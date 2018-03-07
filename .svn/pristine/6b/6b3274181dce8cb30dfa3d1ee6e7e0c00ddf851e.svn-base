@@ -1,0 +1,19 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgxFileDropComponent } from './ngx-file-drop.component';
+import { FileDropModule } from 'ngx-file-drop';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FileDropModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  declarations: [NgxFileDropComponent],
+  exports: [NgxFileDropComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class NgxFileDropModule { }

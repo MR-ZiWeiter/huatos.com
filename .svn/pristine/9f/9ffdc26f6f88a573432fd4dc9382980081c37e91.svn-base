@@ -1,0 +1,131 @@
+._huato_layout_footer
+  display: block
+  background-image: url('../../../assets/image/public/others/foot_hot/bottom-image.png')
+  height: 574px
+  >section
+    padding: 10px 0
+    margin: auto
+    position: relative
+    height: 100%
+    ._huato_address
+      // float: left
+      width: 600px
+      color: #fff
+      h4
+        color: #fff
+        font-size: 16px
+        font-family: Microsoft YaHei
+        line-height: 36px
+        height: 36px
+        margin-top: 20px
+      ul>li
+        color: #fff
+        font-size: 14px
+        line-height: 30px
+        height: 30px
+        font-family: Microsoft YaHei
+        i
+          margin-right: 10px
+    ._huato_hotline
+      position: absolute
+      bottom: 0
+      height: 524px
+      width: 497px
+      right: 0
+      text-align: center
+      ._huato_hotline_inBox
+        background: #fff
+        text-align: center
+        height: 100%
+        padding: 28px
+        width: 430px
+        display: inline-block
+        >header
+          font-size: 0
+          h2
+            font-size: 24px
+            font-family: Arial
+            font-weight: BOLD
+            color: #000
+            height: 30px
+            line-height: 30px
+          h3
+            font-size: 18px
+            font-family: Microsoft YaHei
+            color: #000
+            height: 28px
+            line-height: 28px
+        >form
+          margin-top: 10px
+          position: relative
+          z-index: 999
+          >section._huato_Massage
+            margin-top: 10px
+            height: 30px
+            text-align: center
+            >label
+              display: inline-block
+              cursor: pointer
+              >span
+                display: inline-block
+                height: 30px
+                line-height: 30px
+                font-size: 14px
+                color: #000
+              >input
+                height: 30px
+                border: none
+                background: rgb(205,205,202)
+                color: #555
+                outline: none
+                width: 290px
+                text-indent: .5em
+                margin-left: 8px
+              >textarea
+                display: inline-block
+                width: 290px
+                margin-left: 8px
+                height: 90px
+                vertical-align: text-top
+                resize: none
+                outline: none
+                padding: 5px
+                background: #cdcdca
+                border: none
+          >section._huato_Massage.inherit
+            height: inherit
+          ._huato_hotlineSubmit
+            margin-top: 24px
+            text-align: center
+            height: 30px
+            button
+              display: inline-block
+              border: none
+              outline: none
+              height: 30px
+              background: #DF493E
+              color: #fff
+              width: 150px
+              font-family: Microsoft YaHei
+              font-size: 14px
+              line-height: 30px
+              cursor: pointer
+      ._huato_hotline_inBox:after
+        content: url('../../../assets/image/public/others/foot_hot/bottom-envelope.png')
+        position: absolute
+        bottom: 0
+        left: 0
+        font-size: 0
+        height: 230px
+        overflow: hidden
+._huato_CopyRight
+  background: #282828
+  color: #bbb
+  >section
+    margin: 0 auto
+    >h4
+      color: #bbb
+      font-size: 14px
+      font-family: Microsoft YaHei
+      line-height: 34px
+      text-align: center

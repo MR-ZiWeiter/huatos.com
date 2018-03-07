@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-operating-cate',
+  templateUrl: './operating-cate.component.html',
+  styleUrls: ['./operating-cate.component.sass']
+})
+export class OperatingCateComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

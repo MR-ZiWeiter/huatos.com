@@ -1,0 +1,2 @@
+export const localURL = 'http://192.168.10.68:8010/api/';
+

@@ -1,0 +1,27 @@
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>解决方案名称：</span>
+    <input type="text" id="newTitle" [(ngModel)]="solutionsIntrotionsStr.Details_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>新增方案时间：</span>
+    <input type="text" id="newTitle" [(ngModel)]="solutionsIntrotionsStr.Details_time">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>方案分类名称：</span>
+    <input type="text" id="newTitle" [(ngModel)]="solutionsIntrotionsStr.DetailsType_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newContent">
+    <span>解决方案内容：</span>
+    <app-ckeditor (changeCKEditorContent)="InputContent($event);" class="ckeditorSize" [inContent]="solutionsIntrotionsStr.Details_content"></app-ckeditor>
+  </label>
+</section>
+<section class="newSubmit tableListStyle">
+  <button nz-button (click)="newSubmit($event);">提交保存</button>
+</section>

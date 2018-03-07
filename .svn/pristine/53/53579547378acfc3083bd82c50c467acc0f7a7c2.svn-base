@@ -1,0 +1,28 @@
+::ng-deep .ant-layout
+  height: 100%
+::ng-deep .logo
+  height: 32px
+  background: #333
+  border-radius: 6px
+  margin: 16px
+  text-align: center
+  overflow: hidden
+
+::ng-deep .ant-layout-sider-collapsed .nav-text 
+  display: none
+
+::ng-deep .ant-layout-sider-collapsed .ant-menu-submenu-title:after 
+  display: none
+
+.back_title
+  color: #5cacf3
+  font-size: 28px
+  font-weight: bold
+  font-family: '楷体'
+  padding: 0 15px
+.fa
+  margin-left: 8px
+  margin-right: 8px
+  font-size: 14px
+.ant-layout-sider-collapsed .fa
+  font-size: 16px

@@ -1,0 +1,49 @@
+<section class="_huato_productlist">
+  <section nz-row class="_huato_productcontent">
+    <section class="_huato_product_nav" nz-row>
+      <header class="_huato_contack" nz-col>
+        <h2>{{_ListDataService.listdata.title}}</h2>
+      </header>
+      <nav nz-col>
+        <nz-breadcrumb [nzSeparator]="'>'" class="_huato_navs">
+          <nz-breadcrumb-item>
+            <a routerLink="/home">主页</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a href="/product-center">产品中心</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item *ngFor="let item of bindBreadcrumb" >
+            <a href="/product-center/pdcList/type/{{item.Type_id}}">{{item.Type_Name}}</a>
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </nav>
+    </section>
+    <nz-spin [nzSpinning]="_isSpinning">
+      <section class="_huato_proListItem" *ngIf="pdcListItem.length !== 0" >
+        <section>
+          <ng-container>
+            <nz-card class="_huato_product_items" *ngFor="let item of pdcListItem" >
+              <ng-template #body class="_huato_piclist">
+                <a routerLink="/product-center/pbcDetails/{{item.Product_ID}}">
+                  <div class="custom-image">
+                    <img alt="HUATO" src="{{item.Product_Img}}"/>
+                  </div>
+                  <div class="custom-card">
+                    <h3>{{item.Product_NAME}}</h3>
+                    <p>{{item.Product_DESC}}</p>
+                  </div>
+                </a>
+              </ng-template>
+            </nz-card>
+          </ng-container>
+        </section>
+        <section class="_huato_productpage">
+          <nz-pagination [(nzPageIndex)]="pageIndex" [(nzTotal)]="pdcList.pagetotal" nzShowQuickJumper nzPageSize="12"></nz-pagination>
+        </section>
+      </section>
+      <section class="_huato_proListItem" *ngIf="pdcListItem.length === 0" >
+        <h1>暂无产品</h1>
+      </section>
+    </nz-spin>
+  </section>
+</section>

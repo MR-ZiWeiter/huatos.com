@@ -1,0 +1,51 @@
+._huato_childbtnmenu
+  border: 1px solid #90C8F8
+._huato_menuparsbtn
+  background: #ffffff !important
+  color: #333333 !important
+  outline: none
+  ul
+    background: #F8F7F7 !important
+    color: #666 !important
+    span
+      background: #F8F7F7 !important
+      color: #666 !important
+    li
+      background: #F8F7F7 !important
+      color: #666 !important
+      height: 51px
+      line-height: 51px
+      font-size: 16px
+      border-bottom: 1px solid #EEEDED
+      outline: none
+      span
+        background: #F8F7F7 !important
+        color: #666 !important
+._huato_menuparsbtn:hover
+  background: #ffffff !important
+  color: #333 !important
+::ng-deep .ant-menu-submenu-title
+  border: 1px solid #90C8F8
+  border-bottom: none
+  height: 60px !important
+  line-height: 60px !important
+  font-size: 18px !important
+::ng-deep .ant-menu-dark .ant-menu-submenu-title:hover
+  background: none !important
+  color: #333 !important
+._huato_menuparsbtn.ant-menu-submenu-open
+  background: #5BADF2 !important
+  color: #fff !important
+._huato_menuparsbtn.ant-menu-item-selected
+  background: #5BADF2 !important
+  color: #fff !important
+._huato_menuparsbtn.ant-menu-submenu-open:hover
+  color: #fff !important
+  ::ng-deep .ant-menu-submenu-title
+    color: #fff !important
+._huato_menuparsbtn:last-child
+  ::ng-deep .ant-menu-submenu-title
+    border-bottom: 1px solid #90C8F8
+._huato_menuparsbtn:first-child
+  ::ng-deep .ant-menu-submenu-title
+    border-top: 1px solid #90C8F8

@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'huato-solution-details',
+  templateUrl: './solution-details.component.html',
+  styleUrls: ['./solution-details.component.sass']
+})
+export class SolutionDetailsComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

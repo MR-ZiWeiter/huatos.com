@@ -1,0 +1,30 @@
+import { ProductListDetailsComponent } from './component/product-list-details/product-list-details.component';
+import { ProductCenterComponent } from './product-center.component';
+export const productRoute = [
+    {
+        path: 'product-center',
+        component: ProductCenterComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'product-list-details/1',
+                pathMatch: 'prefix'
+            },
+            {
+                path: 'product-list-details/:id',
+                component: ProductListDetailsComponent,
+                children: [
+                    {
+                        path: '',
+                        redirectTo: '1',
+                        pathMatch: 'prefix'
+                    }
+                ]
+            },
+            {
+                path: 'product-list-details',
+                redirectTo: 'product-list-details/1',
+            }
+        ]
+    }
+];

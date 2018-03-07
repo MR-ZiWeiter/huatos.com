@@ -1,0 +1,42 @@
+import { Component, OnInit } from '@angular/core';
+import { ProductDataType } from '../model/data.of.type.modle';
+import { PorductListService } from '../service/porduct.list.Service';
+
+@Component({
+  selector: 'huato-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.sass'],
+  providers: [ PorductListService ]
+})
+export class HomeComponent implements OnInit {
+  public page: number;
+  public limit: number;
+  public name: string;
+  public homeCare: ProductDataType[];
+  public programList: [any];
+  constructor( public porductListService: PorductListService ) { }
+
+  ngOnInit() {
+    /** 定义homeproductlist参数 **/
+    this.page = 1;
+    this.limit = 4;
+    /** programlist 模拟数据 **/
+    this.programList = [ 1 , 2 , 3 , 4 , 5 , 6 ];
+    /** 获取初始化数据 **/
+    this.ductInit();
+  }
+  ductInit() {
+    this.porductListService.getProductList(this.page, this.limit)
+    .then(result => {
+      if ( result.status === 200 ) {
+        this.homeCare = result['data'].docs;
+      } else {
+        console.log(result);
+      }
+    });
+    this.porductListService.getPlist(this.page, this.name)
+    .then(result => {
+      console.log(result);
+    });
+  }
+}

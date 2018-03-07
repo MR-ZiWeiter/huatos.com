@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-list-pdc',
+  templateUrl: './list-pdc.component.html',
+  styleUrls: ['./list-pdc.component.sass']
+})
+export class ListPdcComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

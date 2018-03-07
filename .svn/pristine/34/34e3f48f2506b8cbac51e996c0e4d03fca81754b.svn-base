@@ -1,0 +1,19 @@
+<header nz-row class="_huato_product_banner">
+  <img src="../../assets/image//public/others/home_about/about_banner.jpg" alt="banner">
+</header> 
+<section class="_huato_product_center">
+  <section class="_huato_theme_width" nz-row>
+    <section class="_huato_product_list_menu" nz-col [nzSpan]="6">
+      <header>
+        <img src="../../assets/image/product/layout/pc-right-icon.png" alt="product-center">
+      </header>
+      <section>
+          <huato-product-menu (listTitle)="thisTitle($event);"></huato-product-menu>
+      </section>
+      <huato-layout-hotline></huato-layout-hotline>
+    </section>
+    <section class="_huato_product_list_details" nz-col [nzSpan]="18">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</section>

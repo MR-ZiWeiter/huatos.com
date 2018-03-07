@@ -1,0 +1,6 @@
+<div class="center">
+  <file-drop headertext="（图片类型只能为gif,png,jpg,jpeg,文件类型只能为.docx,.xls,.txt）" (onFileDrop)="dropped($event)" 
+  (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+      <span>请将需要上传的文件或者图片拖拽至此即可上传</span>
+  </file-drop>
+</div>

@@ -1,0 +1,5 @@
+::ng-deep #dropZone
+  height: 100px
+  border: 1px dashed #0782d0
+  border-radius: 5px
+  width: 800px

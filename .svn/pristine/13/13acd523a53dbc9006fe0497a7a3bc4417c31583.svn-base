@@ -1,0 +1,66 @@
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>资料名称：</span>
+    <input type="text" id="newTitle" [(ngModel)]="DownloadData.Data_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newDesc">
+    <span>资料描述：</span>
+    <!-- <input type="text" id="newDesc" [(ngModel)]="DownloadData.Data_DESC"> -->
+    <nz-input [(ngModel)]="DownloadData.Data_DESC" [nzType]="'textarea'" id="newDesc" [nzRows]="'4'" [nzPlaceHolder]="'请输入资料描述，不要超过2400个字节。'"></nz-input>
+  </label>
+</section>
+<section class="tableListStyle" *ngIf="isShowOptionsCate" >
+  <label for="newCate">
+    <span>资料分类：</span>
+    <nz-cascader
+    [nzExpandTrigger]="'hover'"
+    [nzOptions]="cateOptions"
+    [(ngModel)]="cateValue"
+    (nzSelectionChange)="_setCateChange($event)"
+    nzPlaceHolder="请选择类别">
+    </nz-cascader>
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newpic">
+    <span>封面图片：</span>
+    <input type="text" id="newpic" [(ngModel)]="DownloadData.Data_Img">
+    <div class="clearfix">
+      <nz-upload
+        [nzAction]="uploadUrl"
+        nzListType="picture-card"
+        [(nzFileList)]="fileList"
+        [nzShowButton]="fileList.length < 1"
+        [nzPreview]="handlePreview"
+        (nzChange)="uploadImgChange($event)">
+          <i class="anticon anticon-plus"></i>
+          <div class="ant-upload-text">Upload</div>
+      </nz-upload>
+      <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+        <ng-template #modalContent>
+          <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+        </ng-template>
+      </nz-modal>
+    </div>
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newContent">
+    <span>资料下载地址：</span>
+    <input type="text" id="newContent" [(ngModel)]="DownloadData.Data_URL">
+    <nz-upload
+      [nzAction]="uploadUrl"
+      [nzFileList]="fileLists"
+      (nzChange)="uploadFileChange($event)">
+      <button nz-button>
+        <i class="anticon anticon-upload"></i><span>点击选择需要上传的资料</span>
+      </button>
+    </nz-upload>
+    <!-- <app-ckeditor (changeCKEditorContent)="InputContent($event);" class="ckeditorSize" [inContent]="DownloadData.Details_content"></app-ckeditor> -->
+  </label>
+</section>
+<section class="newSubmit tableListStyle">
+  <button nz-button (click)="newSubmit($event);">提交保存</button>
+</section>

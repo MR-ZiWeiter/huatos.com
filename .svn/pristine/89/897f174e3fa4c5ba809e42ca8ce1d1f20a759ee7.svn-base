@@ -1,0 +1,69 @@
+/**
+ * 系统模块&路由
+ */
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+// Import the Http Module and our Data Service
+import { HttpModule } from '@angular/http';
+/**
+ * 组件
+ */
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { SolutionComponent } from './solution/solution.component';
+import { ProductCenterComponent } from './product-center/product-center.component';
+import { DocDownloadComponent } from './doc-download/doc-download.component';
+import { AboutHuatoComponent } from './about-huato/about-huato.component';
+import { LayoutFooterComponent } from './public-component/layout-footer/layout-footer.component';
+/**
+ * 主路由
+ */
+import { appRouter } from './app.routing';
+/**
+ * 产品模块
+ */
+import { ProductCenterModule } from './product-center/product-center.module';
+/**
+ * 人才招聘模块
+ */
+import { RecruitmentModule } from './recruitment/recruitment.module';
+/**
+ * 其他组件
+ */
+import { BannerComponent } from './home/banner/banner.component';
+/**
+ * 注册服务
+ */
+import { HttpInterceptorService } from './httpUtil/HttpUtil.Service';
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SolutionComponent,
+    DocDownloadComponent,
+    AboutHuatoComponent,
+    LayoutFooterComponent,
+    BannerComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    ProductCenterModule,
+    RecruitmentModule,
+    RouterModule.forRoot(appRouter, { useHash: true }),
+    NgZorroAntdModule.forRoot(),
+    HttpModule
+  ],
+  providers: [ HttpInterceptorService ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

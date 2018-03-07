@@ -1,0 +1,9 @@
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>资料类型名称：</span>
+    <input type="text" id="newTitle" [(ngModel)]="DownloadTypeData.Datetype_Name">
+  </label>
+</section>
+<section class="newSubmit tableListStyle">
+  <button nz-button (click)="newSubmit($event);">提交保存</button>
+</section>

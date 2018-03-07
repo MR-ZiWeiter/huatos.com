@@ -1,0 +1,32 @@
+<nz-table #nzTable [nzDataSource]="data" [nzPageSize]="10">
+  <thead nz-thead>
+    <tr>
+      <th nz-th><span>ID</span></th>
+      <th nz-th><span>联系人名称</span></th>
+      <th nz-th><span>公司名称</span></th>
+      <th nz-th><span>电话</span></th>
+      <th nz-th><span>邮件地址</span></th>
+      <th nz-th><span>具体内容</span></th>
+      <th nz-th><span>更多操作</span></th>
+    </tr>
+  </thead>
+  <tbody nz-tbody>
+    <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+      <td nz-td>{{data.Contacts_ID}}</td>
+      <td nz-td>{{data.Contacts_Name}}</td>
+      <td nz-td>{{data.Contacts_Company}}</td>
+      <td nz-td>{{data.Contacts_phone}}</td>
+      <td nz-td>{{data.Contacts_mail}}</td>
+      <td nz-td class="hid">{{data.Contacts_message}}</td>
+      <td nz-td>
+        <span>
+          <a (click)="showModal(data)">查看详情</a>
+          <span nz-table-divider></span>
+          <nz-popconfirm [nzTitle]="'确定要删除这个任务吗？'" (nzOnConfirm)="deleteConts(data)" (nzOnCancel)="cancel()">
+            <a nz-popconfirm>删除</a>
+          </nz-popconfirm>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

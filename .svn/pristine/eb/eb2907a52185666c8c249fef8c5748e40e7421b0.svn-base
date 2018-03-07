@@ -1,0 +1,23 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { CateComponent } from './cate.component';
+import { OperatingCateComponent } from './operating-cate/operating-cate.component';
+import { ListCateComponent } from './list-cate/list-cate.component';
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule
+  ],
+  declarations: [
+    CateComponent,
+    OperatingCateComponent,
+    ListCateComponent
+  ],
+  exports: [ CateComponent ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+export class CateModule { }

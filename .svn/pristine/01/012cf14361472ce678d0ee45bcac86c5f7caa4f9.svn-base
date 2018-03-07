@@ -1,0 +1,30 @@
+<section class="_huato_productlist">
+  <section nz-row class="_huato_productcontent">
+    <section class="_huato_product_nav" nz-row>
+      <header class="_huato_contack" nz-col>
+        <h2>产品名称</h2>
+      </header>
+      <nav nz-col>
+        <nz-breadcrumb [nzSeparator]="'>'" class="_huato_navs">
+          <nz-breadcrumb-item>
+            <a routerLink="/home">主页</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a href="/product-center">产品中心</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a href="/product-center/product-list-details/1">产品名称</a>
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </nav>
+    </section>
+    <section class="_huato_proListItem">
+      <section>
+        内容
+      </section>
+      <section class="_huato_productpage">
+        <nz-pagination [nzPageIndex]="2" [nzTotal]="50" nzShowQuickJumper></nz-pagination>
+      </section>
+    </section>
+  </section>
+</section>

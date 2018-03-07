@@ -1,0 +1,34 @@
+<section class="_huato_layout_footer">
+  <section class="_huato_theme_width _huato_clearBoth">
+    <section class="_huato_address_l">
+      <h4>深圳总部</h4>
+      <ul>
+        <li><i class="fa fa-building-o"></i>地址：深圳市宝安桃花源科技创新园主园 B栋</li>
+        <li><i class="fa fa-user-o"></i>服务热线：0755-29977605 / 29748810 /29977005/ 23081319 / 23081316 / 29102920</li>
+        <li><i class="fa fa-tty"></i>售后服务热线：0755-29951325</li>
+        <li><i class="fa fa-fax"></i>传真：0755-29748856</li>
+        <li><i class="fa fa-envelope-o"></i>Email: sales@huato.com</li>
+        <li><i class="fa fa-phone"></i>24小时服务热线：18675579060 13510435761</li>
+      </ul>
+    </section>
+    <section class="_huato_address_r">
+      <h4>北京办事处</h4>
+      <ul>
+        <li><i class="fa fa-building-o"></i>地址：北京市交大东路31号院517室 （西直门地铁站附近)</li>
+        <li><i class="fa fa-phone"></i>联系电话：15010390040 / 13510435761</li>
+        <li><i class="fa fa-qq"></i>QQ联 系 ： 刘小姐/ 柯工</li>
+      </ul>
+      <h4>江苏办事处</h4>
+      <ul>
+        <li><i class="fa fa-building-o"></i>地址：江苏省南京市江宁区武夷绿海</li>
+        <li><i class="fa fa-phone"></i>联系电话：18994000266 / 13603086517</li>
+        <li><i class="fa fa-qq"></i>QQ联 系 ： 林小姐 张工</li>
+      </ul>
+    </section>
+  </section>
+</section>
+<section class="_huato_CopyRight">
+  <section class="_huato_theme_width">
+    <h4>CopyRight©2008-2016,深圳市华图测控系统有限公司,粤ICP备08032186号</h4>
+  </section>
+</section>

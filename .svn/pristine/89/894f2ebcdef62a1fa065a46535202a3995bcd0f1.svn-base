@@ -1,0 +1,170 @@
+<div nz-row class='aboutContainer'>
+  <div nz-col [nzSpan]='24' class='_huato_product_banner'>
+    <img src="../../assets/image/public/others/main_banner/banner.png" alt="banner">
+  </div>
+  <div nz-col [nzSpan]='24' class='aboutMain'>
+    <div class='aboutContentBox'>
+      <div nz-col [nzSpan]='24' class='content'>
+        <div class='aboutInfo one'>
+          <span class='huatoLogo'></span>
+          <div class='title'>
+            <p>公司成立</p>
+          </div>
+          <div class='companyInfo'>
+            <p class='yarn'>2008<span class='text'>年</span></p>
+            <p>公司成立</p>
+          </div>
+          <div class='detailsInfo detailsInfoText'>
+            深圳市华图测控系统有限公司 ( HUATO System Co., Ltd. ) 成立于2008年，
+            公司坐落于深圳市宝安区桃花源科技园创新园(国家级留学生创业服务中心)，核心
+            研发团队均有博士或硕士学历，曾长期留学美国或工作于世界五百强企业研发部门。
+            华图公司聚焦于环境测量与控制系统领域，业务包括监测与控制系统软硬件的研发、
+            生产、销售与服务，是深圳市征服重点扶持的高薪技术企业。
+          </div>
+        </div>
+      </div>
+      <div nz-col [nzSpan]='24' class='content'>
+        <div class='aboutInfo two'>
+           <div class='title'>
+             <p>四大系列产品</p>
+           </div>
+          <div class='detailsInfo'>
+            <div nz-col [nzSpan]='6' class='product' >
+              <div>
+                <img src="../../assets/image/public/others/home_about/yiqiyibiao.jpg" alt="">
+              </div>
+              <div nz-col [nzSpan]='24' >
+                仪器仪表
+              </div>
+            </div>
+            <div nz-col [nzSpan]='6' class='product'>
+              <div>
+                <img src="../../assets/image/public/others/home_about/hengshiji.jpg" alt="">
+              </div>
+              <div nz-col [nzSpan]='24'>
+                恒湿机
+              </div>
+            </div>
+            <div nz-col [nzSpan]='6' class='product'>
+              <div>
+                <img src="../../assets/image/public/others/home_about/qixiangzhan.jpg" alt="">
+              </div>
+              <div nz-col [nzSpan]='24'>
+                气象站
+              </div>
+            </div>
+            <div nz-col [nzSpan]='6' class='product'>
+              <div>
+                <img src="../../assets/image/public/others/home_about/gongyetongxun.jpg" alt="">
+              </div>
+              <div nz-col [nzSpan]='24' >
+                工业通讯
+              </div>
+            </div>
+            <div nz-col [nzSpan]='24' class='detailsInfoText' >
+              华图公司产品包括温度、相对湿度、空气质量 ( CO2、CO、COV、SO、HCHO、NO2等 )、
+              光照度( 光照强度与紫外辐射强度 )、粉尘粒子( PM2.5/PM10 )、大气压力、风速、噪声、
+              自动气象站、空气自动净化设备、电子恒温机、恒温恒湿空调、空气洁净空调等监测控制系统。
+              华图公司致力于推动物联网技术在文物保护、工业、电力、交通、环保、农业、食品医药、只能建筑、
+              能源等领域应用，并提供一体化系统集成服务，方便用户的操作和管理。
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div nz-col [nzSpan]='24' class='content'>
+        <div class='aboutInfo  three'>
+          <div class='title'>
+            <p>专业性</p>
+          </div>
+          <div class='detailsInfo ' style='height: 185px; margin-top: 70px;'>
+            <div nz-col [nzSpan]='14' class='professional'>
+              华图公司自创立以来，秉承德国工业企业精益求精的精神，持续投入研发与测试，
+              每年销售收入10%投入到研发与测试部门，购买了大量精密的进口检测与校准设备，
+              测量等级向省级计量单位看齐，检测能力遥遥领先国内同类型企业。
+            </div>
+            <div nz-col [nzSpan]='10' class='professionalright'>
+              <div nz-col [nzSpan]='12' >
+                <span class='patentIcon patent'></span>
+                <span class='patentNum' >20+</span>
+                <span class='patentText'>荣誉证与专利</span>
+              </div>
+              <div nz-col [nzSpan]='12'>
+                <span class='patentIcon team'></span>
+                <span class='patentNum'>40+</span>
+                <span class='patentText'>研发团队</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div nz-col [nzSpan]='24' class='content'>
+        <div class='aboutInfo two four'>
+          <div class='title'>
+            <p>业务遍布全球</p>
+          </div>
+          <div class='detailsInfo business'>
+            <div nz-col [nzSpan]='6' class='businessBorder' >
+              <span class='businessEarth'></span>
+            </div>
+            <div nz-col [nzSpan]='18' class='details'>
+              迄今为止，华图公司客户遍布全球各地，华图监控系统在国内广泛应用于博物馆、图书馆、档案馆、
+              电子厂房、制药车间、食品药品冷链运输、科研院校、客户包括众多国家单位与世界五百强企业，
+              在此同时，华图监控系统持续不断出口美国、加拿大、澳大利亚、巴西、荷兰、瑞士、法国、俄罗斯、意大利、土耳其、
+              台湾、阿联酋等国家和地区。
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div nz-col [nzSpan]='24' class='content lastContent'>
+        <div class='aboutInfo factory'>
+          <div class='title title1'>
+            <p>工厂/分销点</p>
+          </div>
+          <div class='title title2'>
+            <p>监控设备</p>
+          </div>
+          <div class='equipmentImg' >
+            <div nz-col [nzSpan]='24' class='distribution' >
+              <div nz-col [nzSpan]='8'>
+                <img src="../../assets/image/public/others/home_about/about_item1.png" alt="">
+              </div>
+              <div nz-col [nzSpan]='8'>
+                <img src="../../assets/image/public/others/home_about/about_item2.png" alt="">
+              </div>
+              <div nz-col [nzSpan]='8'>
+                <img class='lastImg' src="../../assets/image/public/others/home_about/about_item3.png" alt="">
+              </div>
+            </div>
+            <div nz-col [nzSpan]='24' class='MonitoringEquipmentimg' >
+              <div nz-col [nzSpan]='10' class='leftImg' >
+                <img src="../../assets/image/public/others/home_about/about_items_1.png" alt="">
+              </div>
+              <div nz-col [nzSpan]='8' class='centerImg' >
+                <div nz-col [nzSpan]='24' class='twoImg' >
+                  <img src="../../assets/image/public/others/home_about/about_items_2.png" alt="">
+                </div>
+                <div nz-col [nzSpan]='24' class='twoImg last'>
+                  <img src="../../assets/image/public/others/home_about/about_items_3.png" alt="">
+                </div>
+              </div>
+              <div nz-col [nzSpan]='6' class='rightImg' >
+                <div nz-col [nzSpan]='24' class='threeImg first' >
+                  <img src="../../assets/image/public/others/home_about/about_items_4.png" alt="">
+                </div>
+                <div nz-col [nzSpan]='24' class='threeImg'>
+                  <img src="../../assets/image/public/others/home_about/about_items_5.png" alt="">
+                </div>
+                <div nz-col [nzSpan]='24' class='threeImg last'>
+                  <img src="../../assets/image/public/others/home_about/about_items_6.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

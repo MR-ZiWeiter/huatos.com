@@ -1,0 +1,33 @@
+import { AboutHuatoComponent } from './about-huato/about-huato.component';
+import { DocDownloadComponent } from './doc-download/doc-download.component';
+import { HomeComponent } from './home/home.component';
+/**
+ * children加载模块 这种方式会阻碍初次加载速度
+ * children: SolutionModule
+ * import { SolutionModule } from './solution/solution.module';
+ * import { RecruitmentModule } from './recruitment/recruitment.module';
+ * 正确应该使用loadChildren方式进行懒加载模块
+ * loadChildren: './solution/solution.module#SolutionModule'
+ */
+
+
+export const appRouter: [any] = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    {
+        path: 'product-center',
+        loadChildren: './product-center/product-center.module#ProductCenterModule'
+    },
+    {
+        path: 'solution',
+        loadChildren: './solution/solution.module#SolutionModule'
+    },
+    { path: 'doc-download', component: DocDownloadComponent },
+    {
+        path: 'recruitment',
+        loadChildren: './recruitment/recruitment.module#RecruitmentModule'
+    },
+    { path: 'about-HUATO', component: AboutHuatoComponent },
+    { path: '**', component: HomeComponent }
+];
+

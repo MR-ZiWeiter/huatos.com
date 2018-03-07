@@ -1,0 +1,16 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FileUploadModule } from 'ng2-file-upload';
+import { NgFileUploadComponent } from './ng-file-upload.component';
+import { FormsModule } from '@angular/forms';
+@NgModule({
+  imports: [
+    CommonModule,
+    FileUploadModule,
+    FormsModule
+  ],
+  declarations: [ NgFileUploadComponent ],
+  exports: [ NgFileUploadComponent ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+export class NgFileUploadModule { }

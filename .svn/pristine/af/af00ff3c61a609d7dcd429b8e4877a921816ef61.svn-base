@@ -1,0 +1,205 @@
+._huato_pdcCenter
+  width: 100%
+  >section
+    margin: 0 auto
+._huato_pdcNav
+  >nav
+    text-align: right
+    height: 32px
+    margin-top: 30px
+    line-height: 32px
+    border-bottom: 1px solid #dddddd
+._huato_pdcIntroductions
+  margin-top: 48px
+  >header
+    >section._huato_pdcDetails
+      overflow: hidden
+      min-height: 350px
+      >article
+        width: 625px
+        display: inline-block
+        float: left
+        padding: 0 10px
+        >header
+          height: 50px
+          text-align: center
+          >h1
+            height: 50px
+            line-height: 50px
+            font-size: 21px
+            color: #5aacf5
+            font-weight: bold
+            overflow: hidden
+        >p
+          line-height: 30px
+          font-size: 14px
+          margin: 10px 0
+          text-indent: 2em
+        >footer
+          overflow: hidden
+          >ul
+            overflow: hidden
+            >li
+              width: 100px
+              height: 80px
+              text-align: center
+              overflow: hidden
+              background: #fff
+              float: left
+              margin-right: 25px
+              cursor: pointer
+              >img
+                width: auto
+                height: 100%
+            >li.active
+              border: 1px solid #5aacf5
+            >li:last-child
+              margin-right: 0
+      >section._huato_rtMagnifier
+        display: inline-block
+        float: right
+        width: 575px
+        height: auto
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-pack: center
+        -ms-flex-pack: center
+        justify-content: center
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        position: relative
+        top: 0
+        >aside
+          max-width: 398px
+          max-height: 300px
+          width: 400px
+          text-align: center
+          background: #fff
+          position: relative
+          overflow: hidden
+          img
+            max-width: 100%
+            max-height: 100%
+            height: 300px
+          ._huato_rtManifierSm
+            display: none
+            position: absolute
+            width: 100px
+            height: 100px
+            background: rgba(0,0,0,.5)
+            cursor: move
+        ._huato_rtMagnifierSg
+          width: 350px
+          height: 350px
+          position: absolute
+          top: 0
+          left: -300px
+          overflow: hidden
+          border: 1px solid #ddd
+          background: #fff
+          text-align: center
+          // display: none
+          img
+            position: absolute
+            height: 100%
+        ._huato_rtMagnifierSg.hidden
+          display: none
+  >footer
+    margin-top: 40px
+::ng-deep ._huato_tmpHeight .ant-tabs-tab
+  height: 40px
+  width: 120px
+  text-align: center
+  font-size: 14px
+  font-family: Microsoft YaHei
+::ng-deep ._huato_tmpHeight .ant-tabs-ink-bar.ant-tabs-ink-bar-animated
+  width: 122px !important
+::ng-deep .ant-tabs-tab:after
+  content: ""
+  height: 10px
+  position: absolute
+  left: 0
+  width: 1px
+  background: #5cacf3
+  bottom: 0
+::ng-deep .ant-tabs-tab:last-child:before
+  content: ""
+  height: 10px
+  position: absolute
+  right: 0
+  width: 1px
+  background: #5cacf3
+  bottom: 0
+::ng-deep .ant-tabs-bar
+  border-bottom: 1px solid #5cacf3 !important
+._huato_tmpHeight
+  min-height: 550px
+  border-top: none
+  border-radius: 0 0 4px 4px
+._huato_tmpHeight:after
+  content: ""
+  height: 510px
+  position: absolute
+  width: 100%
+  border: 1px solid #F2F2F2
+  bottom: 4px
+  border-top: none
+  border-radius: 0 0 10px 10px
+::ng-deep .ant-tabs-ink-bar
+  height: 100% !important
+  background-color: #5cacf3 !important
+  z-index: 0 !important
+  border-radius: 5px 5px 0 0
+::ng-deep .ant-tabs-tab-active
+  color: #fff !important
+::ng-deep .ant-tabs-content.ant-tabs-content-animated
+  z-index: 99
+  position: relative
+/** 相关产品 **/
+._huato_pdcXG
+  margin: 20px 0
+  ._huato_pdcXG_title
+    font-size: 18px
+    font-weight: 500
+    font-family: 'Microsoft YaHei'
+    height: 40px
+    line-height: 40px
+    text-indent: 0.5em
+    color: #555
+  ._huato_pdcXG_content
+    overflow: hidden
+    ._huato_pdcXG_box
+      overflow: hidden
+      ._huato_pdcXG_items
+        float: left
+        width: 275px
+        margin-right: 30px
+        ._huato_pdcXG_item_pic
+          border: 1px solid #f3f3f3
+          height: 200px
+          width: 100%
+          text-align: center
+          overflow: hidden
+          display: flex
+          justify-content: center
+          align-items: center
+          img
+            width: auto
+            height: 100%
+            display: inline-block
+        ._huato_pdcXG_item_titles
+          height: 40px
+          text-align: center
+          font-size: 16px
+          line-height: 40px
+          color: #555
+          h3
+            font-size: 16px
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 1
+            overflow: hidden
+      ._huato_pdcXG_items:nth-child(4n)
+        margin-right: 0

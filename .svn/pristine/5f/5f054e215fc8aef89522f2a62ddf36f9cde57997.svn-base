@@ -1,0 +1,29 @@
+<header nz-row class="_huato_solution_banner">
+  <img src="../../assets/image/public/others/home_about/about_banner.jpg" alt="banner">
+</header>
+<section class="_huato_solution_center">
+  <section class="_huato_theme_width" nz-row>
+    <section class="_huato_solution_list_menu" nz-col [nzSpan]="6">
+      <header>
+        <section>
+          <section>
+            <span class="fa fa-lightbulb-o fa-2x"></span>
+            <section>
+              <h1>解决方案</h1>
+              <span>Solution</span>
+            </section>
+          </section>
+        </section>
+      </header>
+      <section>
+        <ul>
+          <li *ngFor="let item of SolutionsCateList" routerLink="/solution/details/{{item.Details_ID}}" routerLinkActive="active" (click)="getDetailsName(item)"><span>{{item.DetailsType_Name}}</span></li>
+        </ul>
+      </section>
+      <huato-layout-hotline></huato-layout-hotline>
+    </section>
+    <section class="_huato_solution_list_details" nz-col [nzSpan]="18">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,83 @@
+<nz-spin [nzSpinning]="_isSpinning">
+  <section class="_huato_pdcCenter">
+    <section class="_huato_theme_width">
+      <header class="_huato_pdcNav">
+        <nav>
+          <nz-breadcrumb>
+            <nz-breadcrumb-item>
+              <i class="anticon anticon-home"></i>首页
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+              <a href="/product-center"><i class="anticon anticon-user"></i><span>产品中心</span></a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+              <a href="#">仪器仪表系列</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+              <a href="#">{{ pdcIntroctions.Product_NAME }}</a>
+            </nz-breadcrumb-item>
+          </nz-breadcrumb>
+        </nav>
+      </header>
+      <footer class="_huato_pdcIntroductions">
+        <header>
+          <section class="_huato_pdcDetails">
+            <article>
+              <header>
+                <h1>{{ pdcIntroctions.Product_NAME }}</h1>
+              </header>
+              <p>
+                {{ pdcIntroctions.Product_DESC }}
+              </p>
+              <footer>
+                <ul>
+                  <li *ngFor="let imgitems of pdcIntroctions.Product_Img; let index = index" (click)="magnifier(imgitems, index)" [ngClass]="{'active': index === isIndex}" >
+                    <img src="{{imgitems}}" alt="">
+                  </li>
+                </ul>
+              </footer>
+            </article>
+            <section class="_huato_rtMagnifier">
+              <!-- 不可使用*ngIf => 使用@viewChild 首次将抓取不到dom从而导致报出错误undefined 使用ngClass更加方便 -->
+              <section class="_huato_rtMagnifierSg" #rtMagnifierSg [ngClass]="{'show': isShowMagnifier, 'hidden': !isShowMagnifier}" >
+                <img src="{{FDimgs}}" alt="">
+              </section>
+              <aside huatoMagnifierImg class="_huato_rtManifierOriginal" (MagnifierOptions)="onMagnifierChange($event)">
+                <section class="_huato_rtManifierSm"></section>
+                <img src="{{FDimgs}}" alt="">
+              </aside>
+            </section>
+          </section>
+        </header>
+        <footer>
+          <nz-tabset [nzSize]="'small'" class="_huato_tmpHeight">
+            <nz-tab *ngFor="let tab of tabs">
+              <ng-template #nzTabHeading>
+                {{tab.name}}
+              </ng-template>
+              <!-- 使用bypassSecurityTrustHtml进行跳过安全检查 -->
+              <span [innerHTML]="tab.content | bypassSecurityTrustHtml"></span>
+            </nz-tab>
+          </nz-tabset>
+        </footer>
+        <nz-content class="_huato_pdcXG" *ngIf="Similar.length !== 0" >
+          <h1 class="_huato_pdcXG_title">相关产品</h1>
+          <section class="_huato_pdcXG_content">
+            <ul class="_huato_pdcXG_box" >
+              <li class="_huato_pdcXG_items" *ngFor="let item of Similar">
+                <a routerLink="/product-center/pbcDetails/{{item.Product_ID}}" href="#">
+                  <header class="_huato_pdcXG_item_pic">
+                    <img src="{{item.Product_Img[0]}}" alt="">
+                  </header>
+                  <footer class="_huato_pdcXG_item_titles">
+                    <h3>{{item.Product_NAME}}</h3>
+                  </footer>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </nz-content>
+      </footer>
+    </section>
+  </section>
+</nz-spin>

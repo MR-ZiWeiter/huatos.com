@@ -1,0 +1,52 @@
+/* 私有的 */
+._huato_layout_header,
+._huato_layout_content,
+._huato_layout_footer
+  padding: 0
+  margin: 0
+  height: initial
+  line-height: initial
+  background: #fff
+._huato_layout_logger
+  height: 100px
+  overflow: hidden
+  >section
+    margin: 30px auto
+
+._huato_hotline
+  display: inline-block
+  zoom: 1
+  height: 40px
+  >img
+    margin-right: 80px
+  span
+    font-size: 14px
+    color: #414549
+    display: block
+    height: 16px
+    text-align: left
+  h2
+    font-size: 26px
+    color: #3498ee
+    text-align: left
+    font-weight: bold
+    font-family: Microsoft YaHei
+._huato_layout_nav
+  background: #5BADF2
+  height: 50px
+  line-height: 50px
+  >nav
+    display: block
+    margin: 0 auto
+    >menu
+      padding: 0 40px
+      color: #fff
+      font-size: 16px 
+      font-family: Microsoft YaHei
+      display: inline-block
+      cursor: pointer
+      outline: none
+    >menu:hover
+      background: rgb(37,126,201)
+    >menu.active
+      background: rgb(37,126,201)

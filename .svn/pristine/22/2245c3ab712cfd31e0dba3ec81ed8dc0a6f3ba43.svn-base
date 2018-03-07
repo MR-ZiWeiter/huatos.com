@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-operating-pdc',
+  templateUrl: './operating-pdc.component.html',
+  styleUrls: ['./operating-pdc.component.sass']
+})
+export class OperatingPdcComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

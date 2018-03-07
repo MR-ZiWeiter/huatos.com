@@ -1,0 +1,25 @@
+<div style="width: 294px;">
+  <ul nz-menu [nzMode]="'inline'" nzTheme='dark' class="_huato_menulastBtncolor">
+    <li nz-submenu class="_huato_menuparsbtn">
+      <span title>
+        <i class="anticon anticon-appstore"></i>
+        <span>Navigation Two</span>
+      </span>
+      <ul>
+        <li nz-menu-item [routerLink]="['type',2]"><i class="fa fa-dot-circle-o"></i>Option 5</li>
+        <li nz-menu-item [routerLink]="['type',3]"><i class="fa fa-dot-circle-o"></i>Option 6</li>
+      </ul>
+    </li>
+    <li nz-submenu class="_huato_menuparsbtn">
+      <span title>
+        <i class="anticon anticon-setting"></i>
+        <span>Navigation Three</span>
+      </span>
+      <ul>
+        <li nz-menu-item [routerLink]="['type',6]"><i class="fa fa-dot-circle-o"></i>Option 9</li>
+        <li nz-menu-item [routerLink]="['type',7]"><i class="fa fa-dot-circle-o"></i>Option 10</li>
+        <li nz-menu-item [routerLink]="['type',8]"><i class="fa fa-dot-circle-o"></i>Option 11</li>
+      </ul>
+    </li>
+  </ul>
+</div>

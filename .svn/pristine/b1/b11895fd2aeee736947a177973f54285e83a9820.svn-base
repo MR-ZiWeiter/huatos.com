@@ -1,0 +1,65 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed">
+    <div class="logo">
+      LOGO
+    </div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+      <li nz-submenu>
+        <span title><i class="fa fa-newspaper-o fa-lg"></i><span class="nav-text">新闻管理</span></span>
+        <ul>
+          <li nz-menu-item routerLink='/main/news/OperatingNews'>添加新闻</li>
+          <li nz-menu-item routerLink='/main/news/NewsList'>新闻列表</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i class="fa fa-cubes fa-lg"></i><span class="nav-text">产品管理</span></span>
+        <ul>
+          <li nz-menu-item routerLink='/main/pdc/operatingPdc'>添加产品</li>
+          <li nz-menu-item routerLink='/main/pdc/listpdc'>产品列表</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i class="fa fa-tasks fa-lg"></i><span class="nav-text">解决方案</span></span>
+        <ul>
+          <li nz-menu-item routerLink='/main/solution/editSolution'>添加方案</li>
+          <li nz-menu-item routerLink='/main/solution/listSolution'>方案列表</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i class="fa fa-object-group fa-lg"></i><span class="nav-text">分类管理</span></span>
+        <ul>
+          <li nz-menu-item routerLink='/main/cate/operatingCate'>添加产品分类</li>
+          <li nz-menu-item routerLink='/main/cate/listcate'>产品分类管理</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i class="fa fa-street-view fa-lg"></i><span class="nav-text">企业信息</span></span>
+        <ul>
+          <li nz-menu-item routerLink='/main/copyright/operatingCopy'>公司信息维护</li>
+          <li nz-menu-item routerLink='/main/copyright/groupcopy'>更多</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i class="fa fa-gears fa-lg"></i><span class="nav-text">系统设置</span></span>
+        <ul>
+          <li nz-menu-item>修改密码</li>
+          <li nz-menu-item>退出登陆</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header style="background: #fff; padding:0;">
+      <h1 class="back_title">中文网站后台管理系统</h1>
+    </nz-header>
+    <nz-content style="margin:0 16px;">
+      <nz-breadcrumb style="margin:12px 0;">
+        <nz-breadcrumb-item *ngFor="let item of breadcrumbs"><a [routerLink]="[item.url]">{{item.label}}</a></nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div style="padding:24px; background: #fff; min-height: 360px;">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">CopyRight©2008-2018,深圳市华图测控系统有限公司,粤ICP备08032186号-1</nz-footer>
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,12 @@
+<quill-editor
+  class="form-control"
+  [(ngModel)]="editorContent"
+  [options]="editorOptions"
+  (blur)="onEditorBlured($event)"
+  (focus)="onEditorFocused($event)"
+  (ready)="onEditorCreated($event)"
+  (change)="onContentChanged($event)">
+  <button
+    (click)="EditorCreated($event)"
+  ></button>
+</quill-editor>

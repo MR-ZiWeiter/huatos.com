@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+      "outDir": "js",
+      "module": "es2015",
+      "moduleResolution": "node",
+      "target": "es5",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "lib": [
+          "dom", "es2017"
+      ]
+  },
+  "files": [
+    "src/app/app.module.ts",
+    "src/main.ts"
+  ],
+  "angularCompilerOptions": {
+      "annotationsAs": "decorators",
+      "genDir": "aot",
+      "preserveWhitespace": false,
+      "skipMetadataEmit" : true
+  }
+}

@@ -1,0 +1,9 @@
+class ProductDataType {
+    title: string;
+    imgSrc: string;
+    description: string;
+    localHerf: string;
+    serverHerf: string;
+    date: Date;
+}
+export default ProductDataType;

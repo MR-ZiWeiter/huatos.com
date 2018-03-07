@@ -1,0 +1,6 @@
+._huato_product_banner
+  width: 100%
+  min-width: 1200px
+  font-size: 0
+  >img
+    width: 100%

@@ -1,0 +1,57 @@
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>解决方案名称：</span>
+    <input type="text" id="newTitle" [(ngModel)]="solutionsIntrotionsStr.Details_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newtime">
+    <span>新增方案时间：</span>
+    <input type="text" id="newtime" [(ngModel)]="solutionsIntrotionsStr.Details_time">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newCateName">
+    <span>方案分类名称：</span>
+    <input type="text" id="newCateName" [(ngModel)]="solutionsIntrotionsStr.DetailsType_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newDesc">
+    <span>方案简单描述：</span>
+    <!-- <input type="text" id="newDesc" [(ngModel)]="solutionsIntrotionsStr.Details_Desc"> -->
+    <nz-input [(ngModel)]="solutionsIntrotionsStr.Details_Desc" [nzType]="'textarea'" id="newDesc" [nzRows]="'4'" [nzPlaceHolder]="'请输入方案描述，不要超过200个字节。'"></nz-input>
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newpic">
+    <span>方案封面图片：</span>
+    <input type="text" id="newpic" [(ngModel)]="solutionsIntrotionsStr.Details_img">
+    <div class="clearfix">
+      <nz-upload
+        [nzAction]="uploadUrl"
+        nzListType="picture-card"
+        [(nzFileList)]="fileList"
+        [nzShowButton]="fileList.length < 1"
+        [nzPreview]="handlePreview"
+        (nzChange)="uploadImgChange($event)">
+          <i class="anticon anticon-plus"></i>
+          <div class="ant-upload-text">Upload</div>
+      </nz-upload>
+      <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+        <ng-template #modalContent>
+          <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+        </ng-template>
+      </nz-modal>
+    </div>
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newContent">
+    <span>解决方案内容：</span>
+    <app-ckeditor (changeCKEditorContent)="InputContent($event);" id="newContent" class="ckeditorSize" [inContent]="solutionsIntrotionsStr.Details_content"></app-ckeditor>
+  </label>
+</section>
+<section class="newSubmit tableListStyle">
+  <button nz-button (click)="newSubmit($event);">提交保存</button>
+</section>

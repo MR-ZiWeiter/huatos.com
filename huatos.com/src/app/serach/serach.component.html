@@ -1,0 +1,48 @@
+<nz-layout class="_huato_SerachBox">
+  <nz-header class="_huato_SerachHeader">
+    <nz-breadcrumb [nzSeparator]="'=>'">
+      <nz-breadcrumb-item>
+        <a href=""><i class="anticon anticon-environment-o"></i>当前位置</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a href=""><i class="anticon anticon-search"></i><span>搜索</span></a>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <nz-input [nzType]="'search'" [nzPlaceHolder]="'请输入名称'" [(ngModel)]="paramspdc.name" style="width: 220px; height: 25px;" (nzOnSearch)="onSearch($event)"></nz-input>
+  </nz-header>
+  <nz-layout class="_huato_SerachContent">
+    <nz-sider class="_huato_SerachSider" (click)="cancel()">
+      <nz-tooltip [nzTitle]="'关闭搜索'" [nzPlacement]="'right'">
+        <i nz-tooltip class="anticon anticon-double-left"></i>
+      </nz-tooltip>
+    </nz-sider>
+    <nz-content>
+      <nz-spin [nzSpinning]="_isSpinning" [nzTip]="'正在读取数据...'">
+        <section class="_huato_home_prodc">
+          <section *ngIf="serachCare.length === 0" >
+            <h2>暂无数据</h2>
+          </section>
+          <nz-card class="_huato_pro_items _huato_float-l" *ngFor="let card of serachCare">
+            <ng-template #body>
+              <a routerLink="/product-center/pbcDetails/{{card.Product_ID}}">
+                <div class="custom-image">
+                  <img alt="example" src="{{ card.Product_Img }}"/>
+                </div>
+                <div class="custom-card">
+                  <h3>{{ card.Product_NAME }}</h3>
+                  <p>{{ card.Product_DESC }}</p>
+                </div>
+              </a>
+            </ng-template>
+          </nz-card>
+        </section>
+        <nz-pagination class="_huato_SerachJump" *ngIf="serachCare.length !== 0"  [(nzPageIndex)]="pageIndex" [(nzTotal)]="pdcList.pagetotal"></nz-pagination>
+      </nz-spin>
+    </nz-content>
+    <nz-sider class="_huato_SerachSider" (click)="cancel()">
+      <nz-tooltip [nzTitle]="'关闭搜索'" [nzPlacement]="'left'">
+        <i nz-tooltip class="anticon anticon-double-right"></i>
+      </nz-tooltip>
+    </nz-sider>
+  </nz-layout>
+</nz-layout>

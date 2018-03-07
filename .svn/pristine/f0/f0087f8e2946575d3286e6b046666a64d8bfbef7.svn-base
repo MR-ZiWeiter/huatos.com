@@ -1,0 +1,28 @@
+import { AboutHuatoComponent } from './about-huato/about-huato.component';
+import { DocDownloadComponent } from './doc-download/doc-download.component';
+import { HomeComponent } from './home/home.component';
+/**
+ * 加载模块
+ */
+import { SolutionModule } from './solution/solution.module';
+import { RecruitmentModule } from './recruitment/recruitment.module';
+
+export const appRouter = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    {
+        path: 'product-center',
+        loadChildren: './product-center/product-center.module#ProductCenterModule'
+    },
+    {
+        path: 'solution',
+        children: SolutionModule
+    },
+    { path: 'doc-download', component: DocDownloadComponent },
+    {
+        path: 'recruitment',
+        children: RecruitmentModule
+    },
+    { path: 'about-HUATO', component: AboutHuatoComponent }
+];
+

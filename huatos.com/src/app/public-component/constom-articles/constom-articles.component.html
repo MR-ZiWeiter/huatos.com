@@ -1,0 +1,35 @@
+<section class="_huato_productlist">
+  <section nz-row class="_huato_productcontent">
+    <section class="_huato_product_nav" nz-row>
+      <header class="_huato_contack" nz-col>
+        <h2>{{pulService.solutionsName}}</h2>
+      </header>
+      <nav nz-col>
+        <nz-breadcrumb [nzSeparator]="'>'" class="_huato_navs">
+          <nz-breadcrumb-item>
+            <a routerLink="/home">主页</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a href="/solution">解决方案</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a href="/product-center/product-list-details/{{ARTICLE.Datails_ID}}">{{ ARTICLE.Datails_Name }}</a>
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </nav>
+    </section>
+    <section class="_huato_proListItem">
+      <section class="_huato_infoIntroctions">
+        <header>
+          <h1>{{ ARTICLE.Datails_Name }}</h1>
+          <p>
+            <span>{{ ARTICLE.Datails_Name }}</span>&nbsp;&nbsp;<span>{{ ARTICLE.Datails_time }}</span>
+            <a href="{{ ARTICLE.href }}">返回列表<i class="anticon anticon-rollback"></i></a>
+          </p>
+        </header>
+        <nz-content [innerHtml] = 'ARTICLE.Datails_content | bypassSecurityTrustHtml'>
+        </nz-content>
+      </section>
+    </section>
+  </section>
+</section>

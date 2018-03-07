@@ -1,0 +1,41 @@
+<section class="tableListStyle">
+  <label for="newNewsTitle">
+    <span>新闻标题：</span>
+    <input type="text" id="newNewsTitle">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newNewsCate">
+    <span>新闻分类：</span>
+    <nz-cascader
+      [nzExpandTrigger]="'hover'"
+      [nzOptions]="cateOptions"
+      [(ngModel)]="cateValue"
+      (ngModelChange)="_console($event)"
+      (nzChange)="_console($event)"
+      nzPlaceHolder="请选择类别">
+    </nz-cascader>
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newNewsRecommend">
+    <span>设为推荐：</span>
+    <nz-cascader
+      [nzExpandTrigger]="'hover'"
+      [nzOptions]="RecommendOptions"
+      [(ngModel)]="RecommendValue"
+      (ngModelChange)="_console($event)"
+      (nzChange)="_console($event)"
+      nzPlaceHolder="是否设置为首页推荐">
+    </nz-cascader>
+  </label>
+</section>
+<section class="tableListStyle">
+    <label for="newNewsContent">
+      <span>新闻内容：</span>
+      <app-ckeditor (changeCKEditorContent)="InputContent($event);" id="newNewsContent"></app-ckeditor>
+    </label>
+</section>
+<section class="newNewsSubmit tableListStyle">
+    <button nz-button (click)="newNewsSubmit($event);">提交保存</button>
+</section>

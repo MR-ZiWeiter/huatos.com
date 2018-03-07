@@ -1,0 +1,72 @@
+import { Component, OnInit } from '@angular/core';
+import { NzModalService, NzMessageService } from 'ng-zorro-antd';
+import { ContsList } from './conts.modul';
+import { ContsListService } from './conts-list.service';
+@Component({
+  selector: 'app-conts-list',
+  templateUrl: './conts-list.component.html',
+  styleUrls: ['./conts-list.component.sass']
+})
+export class ContsListComponent implements OnInit {
+  data: ContsList|any = [];
+  constructor(
+    private modalService: NzModalService,
+    private message: NzMessageService,
+    private contslistService: ContsListService
+  ) {
+      this.getConts();
+  }
+  getConts() {
+    this.contslistService.get_contsList()
+    .then(response => {
+      // console.log(response);
+      if (!response.success) { return; }
+      this.data = response.data;
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+  showModal(params) {
+    const _ = this;
+    const modal = this.modalService.open({
+      title   : '留言内容',
+      content : params.Contacts_message,
+      closable: false,
+      showConfirmLoading: true,
+      cancelText: '返回',
+      okText: '删除',
+      onOk() {
+        return new Promise((resolve) => {
+          setTimeout(function() {
+            _.deleteConts(params);
+            resolve();
+          }, 1000);
+        });
+      },
+      onCancel() {
+      }
+    });
+  }
+  ngOnInit() {
+  }
+  cancel = function () {
+    // this.message.info('标记已读');
+  };
+
+  deleteConts = (params) => {
+    this.contslistService.delete_conts({id: params.Contacts_ID})
+    .then(response => {
+      console.log(response);
+      if (response === true) {
+        this.message.success('删除留言成功！');
+        this.getConts();
+      } else {
+        this.message.error('删除留言失败！');
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+}

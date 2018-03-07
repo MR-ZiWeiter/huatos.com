@@ -1,0 +1,30 @@
+<div style="margin-bottom: 16px;">
+  <button nz-button [nzType]="'primary'" [nzLoading]="_operating" (click)="_operateData()">新增</button>
+  <button nz-button [disabled]="_disabledButton" [nzType]="'danger'" [nzLoading]="_deleteing" (click)="_deleted()">删除</button>
+  <button nz-button [disabled]="_disabledButton" [nzType]="'primary'" [nzLoading]="_editing" (click)="_edited()">修改</button>
+  <span style="margin-left: 8px;" *ngIf="_checkedNumber">Selected {{_checkedNumber}} items</span>
+</div>
+<nz-table #nzTable [nzDataSource]="_dataSet" [nzPageSize]="10" (nzDataChange)="_displayDataChange($event)" (nzPageIndexChange)="_refreshStatus()" (nzPageSizeChange)="_refreshStatus()">
+  <thead nz-thead>
+    <tr>
+      <th nz-th nzCheckbox>
+        <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+        </label>
+      </th>
+      <th nz-th><span>资料类型ID</span></th>
+      <th nz-th><span>资料类型名称</span></th>
+      <th nz-th><span>更多操作</span></th>
+    </tr>
+  </thead>
+  <tbody nz-tbody>
+    <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+      <td nz-td nzCheckbox>
+        <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+        </label>
+      </td>
+      <td nz-td>{{data.Datetype_ID}}</td>
+      <td nz-td>{{data.Datetype_Name}}</td>
+      <td nz-td><span (click)="checking(data)" class="cursorPinter">查看资料</span></td>
+    </tr>
+  </tbody>
+</nz-table>

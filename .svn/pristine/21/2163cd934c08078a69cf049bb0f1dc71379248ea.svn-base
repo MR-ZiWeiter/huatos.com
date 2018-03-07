@@ -1,0 +1,33 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OperatingPdcComponent } from './operating-pdc/operating-pdc.component';
+import { ListPdcComponent } from './list-pdc/list-pdc.component';
+import { NgFileUploadModule } from './../component/ng-file-upload/ng-file-upload.module';
+import { ProductsComponent } from './products.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    NgZorroAntdModule,
+    FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
+    NgFileUploadModule
+  ],
+  exports: [
+    CommonModule,
+    ListPdcComponent,
+    OperatingPdcComponent,
+    ProductsComponent
+  ],
+  declarations: [
+      ListPdcComponent,
+      OperatingPdcComponent,
+      ProductsComponent
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+export class ProductsModule { }

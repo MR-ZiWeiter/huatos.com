@@ -1,0 +1,121 @@
+<section class="_huato_homecontent">
+  <header>
+    <huato-banner></huato-banner>
+  </header>
+  <!-- <nz-affix nzOffsetTop="50" class="_huato_anchor">
+    <nz-anchor>
+      <nz-link nzHref="#热销•产品展示" nzTitle="热销•产品展示"></nz-link>
+      <nz-link nzHref="#环境网络监测系统•解决方案" nzTitle="环境网络监测系统•解决方案"></nz-link>
+      <nz-link nzHref="#关于华图" nzTitle="关于华图"></nz-link>
+      <nz-link nzHref="#合作机构" nzTitle="合作机构"></nz-link>
+    </nz-anchor>
+  </nz-affix> -->
+  <section class="_huato_hotpel">
+    <section class="_huato_theme_width">
+      <section class="_huato_home_products" *ngIf="homeCare.length !== 0" id="热销•产品展示">
+        <header>
+          <h2>热销•产品展示</h2>
+          <h5><span class="_huato_grayLine"></span> SELL LIKE HOT CAKES PRODUCT DISPLAY <span class="_huato_grayLine"></span></h5>
+        </header>
+        <section class="_huato_home_prodc">
+          <nz-card class="_huato_pro_items _huato_float-l" *ngFor="let card of homeCare">
+            <ng-template #body>
+              <a routerLink="/product-center/pbcDetails/{{card.Product_ID}}">
+                <div class="custom-image">
+                  <img alt="example" src="{{ card.Product_Img }}"/>
+                </div>
+                <div class="custom-card">
+                  <h3>{{ card.Product_NAME }}</h3>
+                  <p>{{ card.Product_DESC }}</p>
+                </div>
+              </a>
+            </ng-template>
+          </nz-card>
+        </section>
+        <footer>
+          <button nz-button [nzType]="'primary'" routerLink="/product-center">
+            <span>查看更多产品展示<i class="fa fa-angle-double-right"></i></span>
+          </button>
+        </footer>
+      </section>
+      <section class="_huato_home_solutions" *ngIf="programList.length !== 0" id="环境网络监测系统•解决方案">
+        <header>
+          <h2>环境网络监测系统•解决方案</h2>
+          <h5><span class="_huato_grayLine"></span> ENVIRONMENTAL MONITORING NETWORK SYSTEM SOLUTIONS <span class="_huato_grayLine"></span></h5>
+        </header>
+        <section class="_huato_programList">
+          <ul>
+            <li *ngFor="let item of programList">
+              <section>
+                <img src="{{item.Datails_img}}" alt="">
+              </section>
+              <footer>
+                <article>
+                  <header>
+                    <h2>{{item.DetailsType_Name}}</h2>
+                  </header>
+                  <section>
+                    <p>{{item.Datails_Desc}}</p>
+                  </section>
+                  <footer>
+                    <button>
+                      <a routerLink="/solution/details/{{item.Details_ID}}">了解详细方案</a>
+                    </button>
+                  </footer>
+                </article>
+              </footer>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+  </section>
+  <section class="_huato_home_about_bg" id="关于华图">
+    <section class="_huato_theme_width">
+      <section class="_huato_home_about">
+        <header>
+          <h2>关于华图</h2>
+          <h5><span class="_huato_grayLine"></span> ABOUT HUATO <span class="_huato_grayLine"></span></h5>
+        </header>
+        <section>
+          <header>
+            <h3>深圳市政府重点扶持的科技型企业</h3>
+          </header>
+          <article>
+            <p>深圳市华图测控系统有限公司（HUATO System Co., Ltd.）创立于深圳市桃花源科技创新园（宝安区），是深圳市政府重点扶持的科技型企业。华图公司是一家致力于研发、 设计、销售便携式测试仪器仪表与提供个性化测试系统解决方案的高科技企业。其中R&D 人员占公司人数40%以上，与国内多家科研机构建立了联合技术创新机制，推动新的 测试技术的开发与应用。</p>
+            <p>华图公司的产品与服务覆盖环境、食品、医疗、科学研究、仓储、电子、电力、电信等众多行业客户，是环境、电气、电信行业的主流测试仪器仪表 供应商。中国移动、ZTE中兴、Motorola、Honywell、娃哈哈、北京大学、华南师范大学、中国科学院等众多知名企业与科研院所都采用华图公司系列产品。</p>
+          </article>
+          <footer>
+            <img src="../../assets/image/public/others/home_about/Home-ABOUT-L.png" alt="L">
+            <img src="../../assets/image/public/others/home_about/Home-ABOUT-C.png" alt="C">
+            <img src="../../assets/image/public/others/home_about/Home-ABOUT-R.png" alt="R">
+          </footer>
+        </section>
+      </section>
+    </section>
+  </section>
+  <section class="_huato_partner" id="合作机构">
+    <section class="_huato_theme_width">
+      <section class="_huato_home_partner">
+        <header>
+          <h2>合作机构</h2>
+          <h5><span class="_huato_grayLine"></span> COOPERATION AGENCY <span class="_huato_grayLine"></span></h5>
+        </header>
+        <section>
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency1.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency2.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency3.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency4.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency5.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency6.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency7.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency8.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency9.png" alt="partner">
+          <img src="../../assets/image/public/others/partner/Home-Cooperation agency10.png" alt="partner">
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+<!-- backTop -->
+<nz-back-top></nz-back-top>

@@ -1,0 +1,29 @@
+<header nz-row class="_huato_download_banner">
+  <img src="../../assets/image/public/others/home_about/about_banner.jpg" alt="banner">
+</header>
+<section class="_huato_download_center">
+  <section class="_huato_theme_width" nz-row>
+    <section class="_huato_download_list_menu" nz-col [nzSpan]="6">
+      <header>
+        <section>
+          <section>
+            <span class="fa fa-lightbulb-o fa-2x"></span>
+            <section>
+              <h1>资料下载</h1>
+              <span>DocDownload</span>
+            </section>
+          </section>
+        </section>
+      </header>
+      <section class="_huato_downloadMenu">
+        <ul class="_huato_downloadNavBlock">
+          <li class="_huato_menuItem" *ngFor="let item of downloadCateList" routerLink="/download/details/{{item.Datetype_ID}}" routerLinkActive="active" (click)="setChildDoc(item)"><span>{{item.Datetype_Name}}</span></li>
+        </ul>
+      </section>
+      <huato-layout-hotline></huato-layout-hotline>
+    </section>
+    <section class="_huato_download_list_details" nz-col [nzSpan]="18">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,43 @@
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>主题标题名称：</span>
+    <input type="text" id="newTitle" [(ngModel)]="recruitmentIntrotionsStr.personnel_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newTime">
+    <span>开始招聘时间：</span>
+    <input type="text" id="newTime" [(ngModel)]="recruitmentIntrotionsStr.personnel_time">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newSing">
+    <span>招聘职位人数：</span>
+    <input type="text" id="newSing" [(ngModel)]="recruitmentIntrotionsStr.Personne_count">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newCateName">
+    <span>招聘分类名称：</span>
+    <input type="text" id="newCateName" [(ngModel)]="recruitmentIntrotionsStr.personnelType_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newEmail">
+    <span>联系邮箱地址：</span>
+    <input type="text" id="newEmail" [(ngModel)]="recruitmentIntrotionsStr.Personne_Email">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newContent">
+    <span>招聘详细内容：</span>
+    <app-ckeditor id="newContent" (changeCKEditorContent)="InputContent($event);" class="ckeditorSize" [inContent]="recruitmentIntrotionsStr.personnel_content"></app-ckeditor>
+  </label>
+</section>
+<section class="newSubmit tableListStyle">
+  <button nz-button (click)="newSubmit($event);">提交保存</button>
+</section>
+
+
+
+

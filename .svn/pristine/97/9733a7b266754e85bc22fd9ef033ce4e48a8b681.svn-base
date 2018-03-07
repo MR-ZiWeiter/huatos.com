@@ -1,0 +1,43 @@
+/**
+ * 首页热点产品list集合数据类型
+ */
+export class ProductDataType {
+    title: string;
+    imgSrc: string;
+    description: string;
+    localHerf: string;
+    serverHerf: string;
+    date: Date;
+}
+/**
+ * 解决方案详情数据类型
+ */
+export class SolutionsIntrotions {
+    title: string;
+    content: string;
+    date: Date;
+    auth: string;
+    href: string;
+}
+/***
+ * 人才招聘详情数据类型
+ */
+export class RecruitmentIntrotions {
+    title: string;
+    content: string;
+    date: Date;
+    auth: string;
+    href: string;
+}
+/***
+ * 产品详情数据类型
+ */
+export class PdcIntroctions {
+    title: string;
+    introctions: string;
+    imgs: string[];
+    pdcTranslation: string;
+    pdcPreformance: string;
+    pdcUserRange: string;
+    pdcDocDown: string;
+}

@@ -1,0 +1,51 @@
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { AppRouter } from './app.routing';
+import { MainModule } from './main/main.module';
+import { LoginModule } from './login/login.module';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
+import { HttpInterceptorService } from './httpUtil/HttpUtil.Service';
+import { OperatingCateService } from './main/cate/operating-cate/operating-cate.service';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(AppRouter, { useHash: true }),
+    BrowserAnimationsModule,
+    HttpModule,
+    HttpClientModule,
+    NgZorroAntdModule,
+    FormsModule,
+    ReactiveFormsModule,
+    LoginModule,
+    MainModule
+  ],
+  exports: [
+    NgZorroAntdModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    AuthGuard,
+    AuthService,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

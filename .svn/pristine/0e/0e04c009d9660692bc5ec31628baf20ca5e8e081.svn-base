@@ -1,0 +1,119 @@
+import { Router } from '@angular/router';
+import { SolutionService } from './../solution.service';
+import { Component, OnInit } from '@angular/core';
+import { NzMessageService } from 'ng-zorro-antd';
+import { PulService } from './Pul.service';
+@Component({
+  selector: 'app-list-solution',
+  templateUrl: './list-solution.component.html',
+  styleUrls: ['./list-solution.component.sass'],
+  providers: [NzMessageService]
+})
+export class ListSolutionComponent implements OnInit {
+  _allChecked = false;
+  _disabledButton = true;
+  _checkedNumber = 0;
+  _checkedData: any[] = [];
+  _displayData: Array<any> = [];
+  _operating = false;
+  _editing: boolean;
+  _deleteding: boolean;
+  _dataSet = [];
+  _indeterminate = false;
+  constructor (
+    private MessageService: NzMessageService,
+    private pulService: PulService,
+    private solutionService: SolutionService,
+    private router: Router
+  ) {}
+  _displayDataChange($event) {
+    this._displayData = $event;
+  }
+  getSolutonsList() {
+    this.solutionService.getSolutionsList()
+    .then(response => {
+      console.log(response);
+      if (response.data.length === 0) { return; }
+      this._dataSet = response.data;
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+  _refreshStatus() {
+    const allChecked = this._displayData.every(value => value.checked === true);
+    const allUnChecked = this._displayData.every(value => !value.checked);
+    this._allChecked = allChecked;
+    this._indeterminate = (!allChecked) && (!allUnChecked);
+    this._disabledButton = !this._dataSet.some(value => value.checked);
+    this._checkedNumber = this._dataSet.filter(value => value.checked).length;
+    this.addCheckData();
+  }
+  addCheckData() {
+    this._checkedData = [];
+    this._dataSet.forEach(value => {
+      if (value.checked === true) {
+        this._checkedData.push(value);
+      }
+    });
+  }
+  _checkAll(value) {
+    if (value) {
+      this._displayData.forEach(data => data.checked = true);
+    } else {
+      this._displayData.forEach(data => data.checked = false);
+    }
+    this._refreshStatus();
+  }
+
+  _edited() {
+    this._editing = true;
+    if (this._checkedData.length > 1) {
+      this.MessageService.warning('当前选中的数据超过一条，暂不支持多条数据的更改！');
+      this._editing = false;
+      return;
+    }
+    this.pulService.setSolutionsId(this._checkedData[0].Details_ID);
+    this.router.navigateByUrl('/main/solution/editSolution');
+  }
+  _deleted() {
+    this._deleteding = true;
+    console.log(this._checkedData);
+    if (this._checkedData.length !== 1) {
+      this.MessageService.warning('正在进行队列删除！请不要退出！');
+      this._checkedData.forEach((value, index) => {
+        this.solutionService.deleteSolutions(this._checkedData[index])
+        .then(response => {
+          if (response.data === true) {
+            this.MessageService.success('删除成功！');
+          } else {
+            this.MessageService.error('删除失败！');
+          }
+        })
+        .catch(err => {
+          this.MessageService.error('服务器错误！请稍后再试！');
+        });
+      });
+      this.getSolutonsList();
+      this._deleteding = false;
+    } else {
+      this.solutionService.deleteSolutions(this._checkedData[0])
+      .then(response => {
+        if (response.data === true) {
+          this.MessageService.success('删除成功！');
+          this.getSolutonsList();
+        } else {
+          this.MessageService.error('删除失败！');
+        }
+      })
+      .catch(err => {
+        this.MessageService.error('服务器错误！请稍后再试！');
+      });
+      this._deleteding = false;
+    }
+  }
+
+  ngOnInit() {
+    this.getSolutonsList();
+  }
+}

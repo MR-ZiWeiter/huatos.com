@@ -1,0 +1,1 @@
+{"moduleName":null,"summaries":[{"symbol":{"__symbol":0,"members":[]},"metadata":{"__symbolic":"interface"}},{"symbol":{"__symbol":1,"members":[]},"metadata":{"__symbolic":"interface"}}],"symbols":[{"__symbol":0,"name":"IBreadcrumb","filePath":"./list.interface"},{"__symbol":1,"name":"Breadcrumb","filePath":"./list.interface"}]}

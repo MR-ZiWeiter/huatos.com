@@ -1,0 +1,76 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { Solution } from '../solution.model.interface';
+import { SolutionService } from './../solution.service';
+import { NzMessageService } from 'ng-zorro-antd';
+import { PulService } from '../list-solution/Pul.service';
+
+@Component({
+  selector: 'app-operating-solution',
+  templateUrl: './operating-solution.component.html',
+  styleUrls: ['./operating-solution.component.sass'],
+  providers: [NzMessageService]
+})
+export class OperatingSolutionComponent implements OnInit {
+  public solutionsIntrotionsStr: Solution|any = {};
+  InputId: number;
+  private isUpdata: boolean;
+  constructor(
+    private solutionService: SolutionService,
+    private MessageService: NzMessageService,
+    private pulService: PulService
+  ) {
+    this.InputId = pulService.getSolutionsId();
+    if (this.InputId !== null && this.InputId !== undefined) {
+      this.solutionService.getSolutionsIntrodctions({id: this.InputId})
+      .then(response => {
+        if (response.data.length !== 0) {
+          this.solutionsIntrotionsStr = response.data[0];
+          this.isUpdata = true;
+        } else {
+          this.MessageService.error('获取数据错误！');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        this.MessageService.error('服务器获取数据错误！');
+      });
+    }
+  }
+  InputContent(content: any) {
+    this.solutionsIntrotionsStr.Details_content = content;
+  }
+  newSubmit() {
+    if (!this.isUpdata) {
+      console.log(this.solutionsIntrotionsStr);
+      this.solutionService.addSolutions(this.solutionsIntrotionsStr)
+      .then(response => {
+        if (response.data === true) {
+          this.MessageService.success('新增解决方案成功！');
+        } else {
+          this.MessageService.error('新增解决方案失败！');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        this.MessageService.error('服务器错误！请稍后再试！');
+      });
+    } else {
+      console.log(this.solutionsIntrotionsStr);
+      this.solutionService.updataSolutions(this.solutionsIntrotionsStr)
+      .then(response => {
+        if (response.data === true) {
+          this.MessageService.success('更新成功！');
+        } else {
+          this.MessageService.error('更新失败！');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        this.MessageService.error('服务器错误！请稍后再试！');
+      });
+    }
+  }
+  ngOnInit() {
+  }
+
+}

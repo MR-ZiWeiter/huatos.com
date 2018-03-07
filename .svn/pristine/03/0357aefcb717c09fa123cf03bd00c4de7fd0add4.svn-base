@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+@Component({
+  selector: 'huato-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.sass']
+})
+export class AppComponent {
+  title = 'huato';
+  users: Array<any>;
+  // Create an instance of the DataService through dependency injection
+  constructor() {
+
+    // Access the Data Service's getUsers() method we defined
+
+  }
+  OnInit() {
+    console.log(this.users);
+  }
+}

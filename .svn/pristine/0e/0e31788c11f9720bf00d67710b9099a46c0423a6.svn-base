@@ -1,0 +1,29 @@
+import { Component, OnInit  } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { ListDataService } from './list-data.service';
+@Component({
+  selector: 'huato-product-list-details',
+  templateUrl: './product-list-details.component.html',
+  styleUrls: ['./product-list-details.component.sass']
+})
+export class ProductListDetailsComponent implements OnInit {
+  contack_id: string;
+  bodyStyle = { padding: 0 };
+  constructor(
+    private _activetedRoute: ActivatedRoute,
+    public _ListDataService: ListDataService
+  ) {
+    console.log(this._ListDataService);
+  }
+  ngOnInit() {
+    /**
+     * 快照的方式只能得到第一次进入时的id值
+     * @this._activetedRoute.snapshot.params['id']
+     * this.contack_id = this._activetedRoute.snapshot.params['id'];
+     */
+    this._activetedRoute.params.subscribe((params: Params) => {
+      this.contack_id = params['id'];
+    });
+  }
+
+}

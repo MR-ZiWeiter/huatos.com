@@ -1,0 +1,24 @@
+<div style="width: 294px;">
+  <ul nz-menu [nzMode]="'inline'" nzTheme='dark' class="_huato_menulastBtncolor">
+    <ng-container *ngFor="let item of getCateLists">
+      <li nz-submenu class="_huato_menuparsbtn" *ngIf="item.subnideNode.length !== 0" >
+        <span title>
+          <!-- <i class="anticon anticon-appstore"></i> -->
+          <span>{{item.Type_Name}}</span>
+        </span>
+        <ul>
+          <li nz-menu-item class="_huato_menuChildbtn" [routerLink]="['type', childItem.Type_id]" routerLinkActive="active" *ngFor="let childItem of item.subnideNode"  (click)="onbreadcrumb(item, childItem)">
+            <i class="fa fa-dot-circle-o"></i>
+            {{childItem.Type_Name}}
+          </li>
+        </ul>
+      </li>
+      <li nz-menu-item [routerLink]="['type', item.Type_id]" routerLinkActive="active" *ngIf="item.subnideNode.length === 0" (click)="onbreadcrumb(item)">
+          <span title>
+            <!-- <i class="anticon anticon-mail"></i> -->
+            <span>{{item.Type_Name}}</span>
+          </span>
+        </li>
+    </ng-container>
+  </ul>
+</div>

@@ -1,0 +1,53 @@
+._huato_layout_footer
+  display: block
+  background: #454545
+  >section
+    padding: 10px 0
+    margin: auto
+    ._huato_address_l
+      float: left
+      width: 600px
+      color: #fff
+      h4
+        color: #fff
+        font-size: 16px
+        font-family: Microsoft YaHei
+        line-height: 36px
+        height: 36px
+      ul>li
+        color: #bbb
+        font-size: 14px
+        line-height: 30px
+        height: 30px
+        font-family: Microsoft YaHei
+        i
+          margin-right: 10px
+    ._huato_address_r
+      float: right
+      width: 600px
+      color: #fff
+      h4
+        color: #fff
+        font-size: 16px
+        font-family: Microsoft YaHei
+        line-height: 36px
+        height: 36px
+      ul>li
+        color: #bbb
+        font-size: 14px
+        line-height: 30px
+        height: 30px
+        font-family: Microsoft YaHei
+        i
+          margin-right: 10px
+._huato_CopyRight
+  background: #282828
+  color: #bbb
+  >section
+    margin: 0 auto
+    >h4
+      color: #bbb
+      font-size: 14px
+      font-family: Microsoft YaHei
+      line-height: 34px
+      text-align: center

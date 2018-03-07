@@ -1,0 +1,36 @@
+<div style="margin-bottom: 16px;">
+  <button nz-button [nzType]="'primary'" [nzLoading]="_operating" (click)="_operateData()">新增</button>
+  <button nz-button [disabled]="_disabledButton" [nzType]="'danger'" [nzLoading]="_deleteing" (click)="_deleted()">删除</button>
+  <button nz-button [disabled]="_disabledButton" [nzType]="'primary'" [nzLoading]="_editing" (click)="_edited()">修改</button>
+  <span style="margin-left: 8px;" *ngIf="_checkedNumber">Selected {{_checkedNumber}} items</span>
+</div>
+<nz-table #nzTable [nzDataSource]="_dataSet" [nzPageSize]="10" (nzDataChange)="_displayDataChange($event)" (nzPageIndexChange)="_refreshStatus()" (nzPageSizeChange)="_refreshStatus()">
+  <thead nz-thead>
+    <tr>
+      <th nz-th nzCheckbox>
+        <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+        </label>
+      </th>
+      <th nz-th><span>资料下载ID</span></th>
+      <th nz-th><span>资料分类ID</span></th>
+      <th nz-th><span>资料下载名称</span></th>
+      <th nz-th><span>资料下载描述</span></th>
+      <th nz-th><span>资料下载图片</span></th>
+      <th nz-th><span>资料下载地址</span></th>
+    </tr>
+  </thead>
+  <tbody nz-tbody>
+    <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+      <td nz-td nzCheckbox>
+        <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+        </label>
+      </td>
+      <td nz-td>{{data.Data_ID}}</td>
+      <td nz-td>{{data.Datetype_ID}}</td>
+      <td nz-td>{{data.Data_Name}}</td>
+      <td nz-td>{{data.Data_DESC}}</td>
+      <td nz-td>{{data.Data_Img}}</td>
+      <td nz-td>{{data.Data_URL}}</td>
+    </tr>
+  </tbody>
+</nz-table>

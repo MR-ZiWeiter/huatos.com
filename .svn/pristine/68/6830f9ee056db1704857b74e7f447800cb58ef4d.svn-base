@@ -1,0 +1,139 @@
+<section *ngIf="isShowOptions">
+  <section class="tableListStyle">
+    <label for="newTitle">
+      <span>产品名称：</span>
+      <input type="text" id="newTitle" [(ngModel)]="uploadPdc.Product_NAME">
+      <div nz-form-explain *ngIf="">请输入产品名称</div>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="isShowOptionsCate" >
+    <label for="newCate">
+      <span>产品分类：</span>
+      <nz-cascader
+      [nzExpandTrigger]="'hover'"
+      [nzOptions]="cateOptions"
+      [(ngModel)]="cateValue"
+      (nzSelectionChange)="_setCateChange($event)"
+      nzPlaceHolder="请选择类别">
+      </nz-cascader>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="isShowOptionsRecom">
+    <label for="newRecommend">
+      <span>设为推荐：</span>
+      <nz-cascader
+      [nzExpandTrigger]="'hover'"
+      [nzOptions]="RecommendOptions"
+      [(ngModel)]="RecommendValue"
+      (ngModelChange)="_setHot($event)"
+      nzPlaceHolder="是否设置为首页推荐">
+      </nz-cascader>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="isShowOptions">
+    <label for="newRecommend">
+      <span>主产品图：</span>
+      <div class="clearfix">
+        <nz-upload
+          [nzAction]="uploadUrl"
+          nzListType="picture-card"
+          [(nzFileList)]="fileList"
+          [nzShowButton]="fileList.length < 4"
+          [nzPreview]="handlePreview"
+          (nzChange)="UpImgChange($event)">
+            <i class="anticon anticon-plus"></i>
+            <div class="ant-upload-text">Upload</div>
+        </nz-upload>
+        <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+          <ng-template #modalContent>
+            <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+          </ng-template>
+        </nz-modal>
+      </div>
+    </label>
+  </section>
+  <section class="tableListStyle">
+    <label for="newRecommend">
+      <span>其他附件：</span>
+      <div class="clearfix">
+        <nz-upload
+          [nzAction]="uploadUrl"
+          [nzFileList]="downData"
+          nzMultiple
+          [nzLimit]="2"
+          [nzShowButton]="fileList.length < 10"
+          (nzChange)="UpdataChange($event)">
+          <button nz-button>
+            <i class="anticon anticon-upload"></i><span>上传</span>
+          </button>
+        </nz-upload>
+      </div>
+    </label>
+  </section>
+  <section class="tableListStyle">
+    <label for="newContent">
+      <span>产品描述：</span>
+      <nz-input [(ngModel)]="uploadPdc.Product_DESC" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'请输入产品描述，不要超过2400个字节。'"></nz-input>
+    </label>
+  </section>
+  <section class="tableListStyle">
+    <label for="newContent">
+      <span>切换编辑器：</span>
+      <nz-switch [(ngModel)]="isNgxEditor"></nz-switch>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="!isNgxEditor" >
+    <label for="newContent">
+      <span>产品特点：</span>
+      <app-ckeditor (changeCKEditorContent)="InputContent($event, case = 1);" class="ckeditorSize" [inContent]="uploadPdc.Characteristic"></app-ckeditor>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="!isNgxEditor">
+    <label for="newContent">
+      <span>性能参数：</span>
+      <app-ckeditor (changeCKEditorContent)="InputContent($event, case = 2);" class="ckeditorSize" [inContent]="uploadPdc.ProductDetails"></app-ckeditor>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="!isNgxEditor">
+    <label for="newContent">
+      <span>使用范围：</span>
+      <app-ckeditor (changeCKEditorContent)="InputContent($event, case = 3);" class="ckeditorSize" [inContent]="uploadPdc.Product_Range"></app-ckeditor>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="!isNgxEditor">
+    <label for="newContent">
+      <span>资料下载：</span>
+      <app-ckeditor (changeCKEditorContent)="InputContent($event, case = 4);" class="ckeditorSize" [inContent]="uploadPdc.Product_Data"></app-ckeditor>
+    </label>
+  </section>
+  <!-- ngxQuill -->
+  <section class="tableListStyle" *ngIf="isNgxEditor" >
+    <label for="newContent">
+      <span>产品特点：</span>
+      <app-ngx-quill (changeNgxQuillContent)="InputContent($event, case = 1);" class="ckeditorSize" [inContent]="uploadPdc.Characteristic"></app-ngx-quill>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="isNgxEditor">
+    <label for="newContent">
+      <span>性能参数：</span>
+      <app-ngx-quill (changeNgxQuillContent)="InputContent($event, case = 2);" class="ckeditorSize" [inContent]="uploadPdc.ProductDetails"></app-ngx-quill>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="isNgxEditor">
+    <label for="newContent">
+      <span>使用范围：</span>
+      <app-ngx-quill (changeNgxQuillContent)="InputContent($event, case = 3);" class="ckeditorSize" [inContent]="uploadPdc.Product_Range"></app-ngx-quill>
+    </label>
+  </section>
+  <section class="tableListStyle" *ngIf="isNgxEditor">
+    <label for="newContent">
+      <span>资料下载：</span>
+      <app-ngx-quill (changeNgxQuillContent)="InputContent($event, case = 4);" class="ckeditorSize" [inContent]="uploadPdc.Product_Data"></app-ngx-quill>
+    </label>
+  </section>
+  <section class="newSubmit tableListStyle">
+    <button nz-button (click)="_newSubmit($event);">提交保存</button>
+  </section>
+  <!-- <app-ckeditor (changeCKEditorContent)="InputContent($event);" id="newNewsContent"></app-ckeditor> -->
+  <!-- <app-ngx-file-drop (uploadFileUrl)="uploadFileUrlChange($event)"></app-ngx-file-drop> -->
+</section>

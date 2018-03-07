@@ -1,0 +1,19 @@
+/** 主体 **/
+html,body
+  height: auto !important
+/* 公有的 */
+._huato_theme_width
+  width: 1200px
+._huato_textRight
+  text-align: right
+._huato_textLeft
+  text-align: left
+._huato_float-l
+  float: left
+._huato_float-r
+  float: right
+._huato_clearBoth:after
+  content: "\0020"
+  display: block
+  height: 0
+  clear: both

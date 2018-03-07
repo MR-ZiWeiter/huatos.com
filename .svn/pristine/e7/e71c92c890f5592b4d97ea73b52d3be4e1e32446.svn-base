@@ -1,0 +1,36 @@
+<header nz-row class="_huato_recruitment_banner">
+  <img src="../../assets/image/public/others/home_about/about_banner.jpg" alt="banner">
+</header>
+<section class="_huato_recruitment_center">
+  <section class="_huato_theme_width" nz-row>
+    <section class="_huato_recruitment_list_menu" nz-col [nzSpan]="6">
+      <header>
+        <section>
+          <section>
+            <span class="iconfont icon-rencai"></span>
+            <section>
+              <h1>人才招聘</h1>
+              <span>Recruitment</span>
+            </section>
+          </section>
+        </section>
+      </header>
+      <section>
+        <ul>
+          <li><span>售前售后技术支持</span></li>
+        </ul>
+      </section>
+      <footer class="_huato_BG_hotphone">
+        <section>
+          <h2>全国服务热线</h2>
+          <p>NATIONAL SERVICE HOTLINE</p>
+          <h3>0755-2997 7605</h3>
+          <span>深圳市宝安区西乡桃花源创新科技园4分园4楼</span>
+        </section>
+      </footer>
+    </section>
+    <section class="_huato_recruitment_list_details" nz-col [nzSpan]="18">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</section>

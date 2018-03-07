@@ -1,0 +1,35 @@
+<section class="_huato_productlist">
+  <section nz-row class="_huato_productcontent">
+    <section class="_huato_product_nav" nz-row>
+      <header class="_huato_contack" nz-col>
+        <h2>产品名称</h2>
+      </header>
+      <nav nz-col>
+        <nz-breadcrumb [nzSeparator]="'>'" class="_huato_navs">
+          <nz-breadcrumb-item>
+            <a routerLink="/home">主页</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a href="/product-center">产品中心</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a href="/product-center/product-list-details/1">产品名称</a>
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </nav>
+    </section>
+    <section class="_huato_proListItem">
+      <section class="_huato_infoIntroctions">
+        <header>
+          <h1>{{ ARTICLE.title }}</h1>
+          <p>
+            <span>{{ ARTICLE.auth }}</span>&nbsp;&nbsp;<span>{{ ARTICLE.date }}</span>
+            <a href="{{ ARTICLE.href }}">返回列表<i class="fa fa-mail-reply fa-2x"></i></a>
+          </p>
+        </header>
+        <nz-content [innerHtml] = 'ARTICLE.content'>
+        </nz-content>
+      </section>
+    </section>
+  </section>
+</section>

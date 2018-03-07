@@ -1,0 +1,24 @@
+import { ProductListDetailsComponent } from './product-center/component/product-list-details/product-list-details.component';
+import { AboutHuatoComponent } from './about-huato/about-huato.component';
+import { RecruitmentComponent } from './recruitment/recruitment.component';
+import { DocDownloadComponent } from './doc-download/doc-download.component';
+import { SolutionComponent } from './solution/solution.component';
+import { ProductCenterComponent } from './product-center/product-center.component';
+import { HomeComponent } from './home/home.component';
+
+export const appRouter = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    {
+        path: 'product-center',
+        loadChildren: './product-center/product-center.module#ProductCenterModule'
+    },
+    { path: 'solution', component: SolutionComponent },
+    { path: 'doc-download', component: DocDownloadComponent },
+    {
+        path: 'recruitment',
+        loadChildren: './recruitment/recruitment.module#RecruitmentModule'
+    },
+    { path: 'about-HUATO', component: AboutHuatoComponent }
+];
+

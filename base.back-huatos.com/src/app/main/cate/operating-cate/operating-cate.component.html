@@ -1,0 +1,43 @@
+<section class="tableListStyle">
+  <label for="newTitle">
+    <span>分类名称：</span>
+    <input type="text" id="newTitle" [(ngModel)]="cates.Type_Name">
+  </label>
+</section>
+<section class="tableListStyle">
+  <label for="newCate">
+    <span>用作父级：</span>
+    <nz-switch [(ngModel)]="isParent" [nzDisabled]="isDisabled">
+      <i class="anticon anticon-check" checked></i>
+      <i class="anticon anticon-cross" unchecked></i>
+    </nz-switch>
+  </label>
+</section>
+<section class="tableListStyle" *ngIf="!isParent">
+  <label for="newCate">
+    <span>一级分类：</span>
+    <nz-cascader
+    [nzExpandTrigger]="'click'"
+    [nzOptions]="cateOptions"
+    [(ngModel)]="cateValue"
+    nzPlaceHolder="请选择类别"
+    (nzSelectionChange)="_console($event)">
+    </nz-cascader>
+  </label>
+</section>
+<section class="newNewsSubmit tableListStyle">
+  <button nz-button (click)="newSubmit($event);">提交保存</button>
+</section>
+<!-- <section class="tableListStyle">
+  <label for="newRecommend">
+    <span>设为推荐：</span>
+    <nz-cascader
+    [nzExpandTrigger]="'hover'"
+    [nzOptions]="RecommendOptions"
+    [(ngModel)]="RecommendValue"
+    (ngModelChange)="_console($event)"
+    (nzChange)="_console($event)"
+    nzPlaceHolder="是否设置为首页推荐">
+    </nz-cascader>
+  </label>
+</section> -->

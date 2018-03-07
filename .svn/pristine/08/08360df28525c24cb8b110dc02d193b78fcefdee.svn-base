@@ -1,0 +1,19 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ConstomArticlesComponent } from './constom-articles.component';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    NgZorroAntdModule
+  ],
+  exports: [
+    ConstomArticlesComponent
+  ],
+  declarations: [
+    ConstomArticlesComponent
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+export class ConstomArticlesModule { }

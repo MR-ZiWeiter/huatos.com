@@ -1,0 +1,47 @@
+<section class="_huato_downloadlist">
+  <section nz-row class="_huato_downloadcontent">
+    <section class="_huato_download_nav" nz-row>
+      <header class="_huato_contack" nz-col>
+        <h2>{{menudata.Datetype_Name}}</h2>
+      </header>
+      <nav nz-col>
+        <nz-breadcrumb [nzSeparator]="'>'" class="_huato_navs">
+          <nz-breadcrumb-item>
+            <a routerLink="/home">主页</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a routerLink="/download">资料下载</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a routerLink="/download/details/{{menudata.Datetype_ID}}">{{menudata.Datetype_Name}}</a>
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </nav>
+    </section>
+    <section class="_huato_proListItem" *ngIf="ContentJson.length !== 0">
+      <section>
+        <ng-container>
+          <nz-card class="_huato_download_items" *ngFor="let item of ContentJson" >
+            <ng-template #body class="_huato_piclist">
+              <a href="{{item.Data_URL}}" download="{{item.Data_URL}}">
+                <div class="custom-image">
+                  <img alt="example" src="{{item.Data_Img}}"/>
+                </div>
+                <div class="custom-card">
+                  <h3>{{item.Data_Name}}</h3>
+                  <p>{{item.Data_DESC}}</p>
+                </div>
+              </a>
+            </ng-template>
+          </nz-card>
+        </ng-container>
+      </section>
+      <!-- <section class="_huato_downloadpage">
+        <nz-pagination [(nzPageIndex)]="pageIndex" [(nzTotal)]="pdcList.pagetotal" nzShowQuickJumper nzPageSize="10"></nz-pagination>
+      </section> -->
+    </section>
+    <section class="_huato_proListItem" *ngIf="ContentJson.length === 0">
+      <h1>暂无资料</h1>
+    </section>
+  </section>
+</section>

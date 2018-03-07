@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { SolutionsIntrotions } from '../../model/data.of.type.modle';
+@Component({
+  selector: 'huato-constom-articles',
+  templateUrl: './constom-articles.component.html',
+  styleUrls: ['./constom-articles.component.sass']
+})
+export class ConstomArticlesComponent implements OnInit {
+  public ARTICLE: SolutionsIntrotions;
+  constructor() { }
+
+  ngOnInit() {
+    this.ARTICLE = {
+      title: 'A2000解决方案',
+      auth: '华图测控',
+      content: ``,
+      date: new Date(),
+      href: '/home'
+    };
+  }
+
+}

@@ -1,0 +1,93 @@
+import { GroupCopyRightComponent } from './copy-right/group-copy-right/group-copy-right.component';
+import { OperatingCateComponent } from './cate/operating-cate/operating-cate.component';
+import { ListPdcComponent } from './products/list-pdc/list-pdc.component';
+import { AuthGuard } from '../auth/auth.guard';
+import { MainComponent } from './main.component';
+import { WelconComponent } from './welcon/welcon.component';
+import { NewsComponent } from './news/news.component';
+import { OperatingPdcComponent } from './products/operating-pdc/operating-pdc.component';
+import { ListCateComponent } from './cate/list-cate/list-cate.component';
+import { OperatingCopyRightComponent } from './copy-right/operating-copy-right/operating-copy-right.component';
+export const MainRouter = [
+    {
+        path: 'main',
+        component: MainComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'welcon',
+                pathMatch: 'prefix'
+            },
+            {
+                path: 'news',
+                loadChildren: './news/news.module#NewsModule',
+                canActivate: [ AuthGuard ]
+            },
+            {
+                path: 'pdc',
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'listpdc',
+                        pathMatch: 'prefix'
+                    },
+                    {
+                        path: 'listpdc',
+                        component: ListPdcComponent,
+                        canActivate: [ AuthGuard ]
+                    },
+                    {
+                        path: 'operatingPdc',
+                        component: OperatingPdcComponent,
+                        canActivate: [ AuthGuard ]
+                    }
+                ]
+            },
+            {
+                path: 'cate',
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'listcate',
+                        pathMatch: 'prefix'
+                    },
+                    {
+                        path: 'listcate',
+                        component: ListCateComponent,
+                        canActivate: [ AuthGuard ]
+                    },
+                    {
+                        path: 'operatingCate',
+                        component: OperatingCateComponent,
+                        canActivate: [ AuthGuard ]
+                    }
+                ]
+            },
+            {
+                path: 'copyright',
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'groupcopy',
+                        pathMatch: 'prefix'
+                    },
+                    {
+                        path: 'groupcopy',
+                        component: GroupCopyRightComponent,
+                        canActivate: [ AuthGuard ]
+                    },
+                    {
+                        path: 'operatingCopy',
+                        component: OperatingCopyRightComponent,
+                        canActivate: [ AuthGuard ]
+                    }
+                ]
+            },
+            {
+                path: 'welcon',
+                component: WelconComponent,
+                canActivate: [ AuthGuard ]
+            }
+        ]
+    }
+];

@@ -1,0 +1,9 @@
+export interface Solution {
+  Datails_Name: string;
+  Datails_time: string;
+  Datails_content: string;
+  Datails_TypeName: string;
+  Datails_ID?: number;
+  Datails_Desc: string;
+  Datails_img: string;
+}

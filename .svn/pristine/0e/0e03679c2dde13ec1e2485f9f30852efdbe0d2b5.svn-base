@@ -1,0 +1,35 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { MainComponent } from './main.component';
+
+import { MainRouter } from './main.routing';
+import { WelconComponent } from './welcon/welcon.component';
+import { NewsModule } from './news/news.module';
+
+import { ProductsModule } from './products/products.module';
+import { CopyRightModule } from './copy-right/copy-right.module';
+import { CateModule } from './cate/cate.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    NgZorroAntdModule,
+    NewsModule,
+    RouterModule.forChild(MainRouter),
+    ProductsModule,
+    CopyRightModule,
+    CateModule
+  ],
+  exports: [
+    MainComponent,
+    CommonModule
+  ],
+  declarations: [
+    MainComponent,
+    WelconComponent
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+export class MainModule { }
